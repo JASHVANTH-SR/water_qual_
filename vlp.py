@@ -781,7 +781,7 @@ if uploaded_file is not None:
     df=list(df)
     del df
     gc.collect()   
-    remove_files(10)
+    remove_files(30)
 
     # In[ ]:
 

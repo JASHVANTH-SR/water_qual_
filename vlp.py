@@ -108,6 +108,7 @@ def runvoice(text):
     st.audio(audio_bytes, format="audio/mp3",start_time=0)
     time.sleep(10)
     st.write(f" {output_text}")
+    time.sleep(10)
 
 
 image = Image.open('tree.jpg')

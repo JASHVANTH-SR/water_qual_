@@ -120,9 +120,9 @@ st.markdown('''### This is the **Study App** created in Streamlit using the **pa
 runvoice("This is the Software used to study the Characteristics of Water. This software is created in Streamlit using Scikit-learn and plotly package.\
     Courtesy :  Software built in 'Python' and 'Streamlit' by JASHVANTH S R,BALAJI S,HARUL GANESH S B,GOWTHAM H")
 
-with st.sidebar.header('1. Upload your Excel data'):
-    runvoice("Upload your Excel data")
-    uploaded_file = st.sidebar.file_uploader("Upload your input Excel file", type=["xlsx"])
+uploaded_file=st.text_input("Enter the dataset excel")
+df=pd.read_excel(uploaded_file)
+st.write(df)
 
 
 colors_blue = ["#132C33", "#264D58", '#17869E', '#51C4D3', '#B4DBE9']

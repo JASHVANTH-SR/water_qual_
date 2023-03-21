@@ -101,9 +101,12 @@ def remove_files(n):
 
 def runvoice(text):
     result, output_text = text_to_speech(input_language, output_language, text)
+    time.sleep(10)
     audio_file = open(f"temp/{result}.mp3", "rb+")
     audio_bytes = audio_file.read()
+    time.sleep(10)
     st.audio(audio_bytes, format="audio/mp3",start_time=0)
+    time.sleep(10)
     st.write(f" {output_text}")
 
 

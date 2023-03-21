@@ -21,7 +21,6 @@ import plotly
 import plotly.offline as pyo
 import plotly.express as px
 import plotly.graph_objs as go
-pyo.init_notebook_mode()
 import plotly.figure_factory as ff
 import missingno as msno
 

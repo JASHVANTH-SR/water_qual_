@@ -119,11 +119,12 @@ st.markdown('''### This is the **Study App** created in Streamlit using the **pa
 ''')
 runvoice("This is the Software used to study the Characteristics of Water. This software is created in Streamlit using Scikit-learn and plotly package.\
     Courtesy :  Software built in 'Python' and 'Streamlit' by JASHVANTH S R,BALAJI S,HARUL GANESH S B,GOWTHAM H")
-
-uploaded_file=st.text_input("Enter the dataset excel")
-df=pd.read_excel(uploaded_file)
-st.write(df)
-
+try:
+    uploaded_file=st.text_input("Enter the dataset excel")
+    df=pd.read_excel(uploaded_file)
+    st.write(df)
+except FileNotFoundError:
+    print("Enter any one of the following Dataset \n 1. cgl.xlsx \n 2. kanch.xlsx \n 3. trl.xlsx \n 4. vlp.xlsx \n  5. vlr.xlsx")
 
 colors_blue = ["#132C33", "#264D58", '#17869E', '#51C4D3', '#B4DBE9']
 colors_dark = ["#1F1F1F", "#313131", '#636363', '#AEAEAE', '#DADADA']

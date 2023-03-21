@@ -124,8 +124,8 @@ try:
     df=pd.read_excel(uploaded_file)
     st.write(df)
 except FileNotFoundError:
-    print("Enter any one of the following Dataset \n 1. 'cgl.xlsx' \n 2. 'kanch.xlsx' \n 3. 'trl.xlsx' \n 4. 'vlp.xlsx' \n  5. 'vlr.xlsx' ")
-
+    print("Enter any one of the following Dataset \n 1. 'cgl' \n 2. 'kanch' \n 3. 'trl' \n 4. 'vlp' \n  5. 'vlr'  dont forget to add .xlsx after dataset name")
+    runvoice("Enter any one of the following Dataset \n 1. 'cgl' \n 2. 'kanch' \n 3. 'trl' \n 4. 'vlp' \n  5. 'vlr'  dont forget to add .xlsx after dataset name")
 colors_blue = ["#132C33", "#264D58", '#17869E', '#51C4D3', '#B4DBE9']
 colors_dark = ["#1F1F1F", "#313131", '#636363', '#AEAEAE', '#DADADA']
 colors_green = ['#01411C','#4B6F44','#4F7942','#74C365','#D0F0C0']

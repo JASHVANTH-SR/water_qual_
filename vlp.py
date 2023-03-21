@@ -110,7 +110,7 @@ def runvoice(text):
         time.sleep(10)
         st.write(f" {output_text}")
         time.sleep(10)
-    except gTTSError:
+    except Exception as e:
         print()
 
 

@@ -779,7 +779,7 @@ if uploaded_file is not None:
     finalResults
 
     df=list(df)
-    del lst
+    del df
     gc.collect()   
     remove_files(10)
 

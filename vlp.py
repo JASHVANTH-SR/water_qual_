@@ -805,7 +805,9 @@ try:
         del df
         remove_files(30)
         uploaded_files=st.empty()
+        exit(0)
         quit()
+        
 except FileNotFoundError:
     print(" ")
     # In[ ]:

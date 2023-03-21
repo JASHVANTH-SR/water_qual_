@@ -129,7 +129,6 @@ time.sleep(10)
 try:
     uploaded_file=st.text_input("Enter the dataset excel")
     df=pd.read_excel(uploaded_file)
-    st.write(df)
 
     colors_blue = ["#132C33", "#264D58", '#17869E', '#51C4D3', '#B4DBE9']
     colors_dark = ["#1F1F1F", "#313131", '#636363', '#AEAEAE', '#DADADA']

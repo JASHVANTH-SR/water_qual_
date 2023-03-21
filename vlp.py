@@ -1,5 +1,5 @@
 # In[1]:
-
+import gc
 import streamlit as st
 import os
 import time
@@ -779,79 +779,7 @@ if uploaded_file is not None:
     finalResults
 
 
-    # In[58]:
-
-
-    model_params = {
-        'XGB':
-        {
-            'model':GradientBoostingClassifier(),
-            'params':
-            {
-                'learning_rate':[0.0001,0.001,0.01,0.1],
-                'n_estimators':[100,200,500,1000],
-                'max_features':['sqrt','log2'],
-                'max_depth':list(range(11))
-            }
-        },
-        'Random Forest':
-        {
-            'model':RandomForestClassifier(),
-            'params':
-            {
-                'n_estimators':[10,50,100,200],
-                'max_features':['auto','sqrt','log2'],
-                'max_depth':list(range(1,11))
-            }
-        }
-    }
-
-
-    # In[61]:
-
-
-    cv = RepeatedStratifiedKFold(n_splits=5,n_repeats=2)
-    scores=[]
-    for model_name,params in model_params.items():
-        rs = RandomizedSearchCV(params['model'],params['params'],cv=cv,n_iter=20)
-        rs.fit(X,y)
-        scores.append([model_name,dict(rs.best_params_),rs.best_score_])
-    data=pd.DataFrame(scores,columns=['Model','Parameters','Score'])
-
-
-    # In[62]:
-
-
-    param=data['Parameters']
-    model = VotingClassifier(estimators=[
-                                         ('XGB',GradientBoostingClassifier(**param[0])),
-                                         ('RF',RandomForestClassifier(**param[1])),
-                                        ],voting='hard')
-
-    accuracy=[]
-    scaler = StandardScaler()
-    skf = RepeatedStratifiedKFold(n_splits=5,n_repeats=2)
-    skf.get_n_splits(X,y)
-
-    for train_index, test_index in skf.split(X,y):
-        
-        X_train, X_test = X[train_index], X[test_index]
-        y_train, y_test = y[train_index], y[test_index]
-        
-        scaler.fit(X_train)
-        X_train = scaler.transform(X_train)
-        X_test = scaler.transform(X_test)
-        
-        model.fit(X_train,y_train)
-        predictions=model.predict(X_test)
-        score=accuracy_score(y_test,predictions)
-        accuracy.append(score)    
-
-
-    # In[63]:
-
-    st.markdown("#### accuracy Rate of Our Data")
-    st.write(np.mean(accuracy))
+gc.collect()   
 remove_files(10)
 
     # In[ ]:

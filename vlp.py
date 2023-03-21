@@ -124,7 +124,7 @@ try:
     df=pd.read_excel(uploaded_file)
     st.write(df)
 except FileNotFoundError:
-    print("Enter any one of the following Dataset \n 1. cgl.xlsx \n 2. kanch.xlsx \n 3. trl.xlsx \n 4. vlp.xlsx \n  5. vlr.xlsx")
+    print("Enter any one of the following Dataset \n 1. 'cgl.xlsx' \n 2. 'kanch.xlsx' \n 3. 'trl.xlsx' \n 4. 'vlp.xlsx' \n  5. 'vlr.xlsx' ")
 
 colors_blue = ["#132C33", "#264D58", '#17869E', '#51C4D3', '#B4DBE9']
 colors_dark = ["#1F1F1F", "#313131", '#636363', '#AEAEAE', '#DADADA']

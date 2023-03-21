@@ -1,5 +1,4 @@
 # In[1]:
-import gc
 import streamlit as st
 import os
 import time
@@ -805,12 +804,13 @@ try:
 
         df=list(df)
         del df
-        gc.collect()   
         remove_files(30)
+        uploaded_files=st.empty()
+        quit()
 except FileNotFoundError:
     print(" ")
     # In[ ]:
 
 
 
-    uploaded_files=st.empty()
+

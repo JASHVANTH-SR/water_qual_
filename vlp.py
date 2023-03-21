@@ -778,9 +778,10 @@ if uploaded_file is not None:
 
     finalResults
 
-
-gc.collect()   
-remove_files(10)
+    df=list(df)
+    del lst
+    gc.collect()   
+    remove_files(10)
 
     # In[ ]:
 

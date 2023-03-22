@@ -144,25 +144,25 @@ new_file = st.file_uploader("Choose an Excel file", type="xlsx")
 if new_file is not None:
     uploaded_file = new_file
     file_hash = hashlib.sha256(uploaded_file.read()).hexdigest()
-    session_state.uploaded_file = uploaded_file
+    st.session_state.uploaded_file = uploaded_file
 
 # If a file is uploaded, load the data and display it in a table
-if session_state.uploaded_file is not None:
-    df = load_excel(session_state.uploaded_file)
-
-    colors_blue = ["#132C33", "#264D58", '#17869E', '#51C4D3', '#B4DBE9']
-    colors_dark = ["#1F1F1F", "#313131", '#636363', '#AEAEAE', '#DADADA']
-    colors_green = ['#01411C','#4B6F44','#4F7942','#74C365','#D0F0C0']
-    st.pyplot(sns.palplot(colors_blue))
-    st.pyplot(sns.palplot(colors_green))
-    st.pyplot(sns.palplot(colors_dark))
-
-    if uploaded_file is not None:
+if st.session_state.uploaded_file is not None:
         @st.cache_data
+
         def load_excel():
-            csv = pd.read_excel(uploaded_file)
-            return csv
+            csv = pd.read_excel(st.session_state.uploaded_file)
+        return csv
+
         df = load_excel()
+
+        colors_blue = ["#132C33", "#264D58", '#17869E', '#51C4D3', '#B4DBE9']
+        colors_dark = ["#1F1F1F", "#313131", '#636363', '#AEAEAE', '#DADADA']
+        colors_green = ['#01411C','#4B6F44','#4F7942','#74C365','#D0F0C0']
+        st.pyplot(sns.palplot(colors_blue))
+        st.pyplot(sns.palplot(colors_green))
+        st.pyplot(sns.palplot(colors_dark))
+
         # In[4]:
 
 

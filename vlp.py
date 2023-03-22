@@ -784,7 +784,6 @@ try:
         for obj in d:
             if not obj.startswith('__'):
                 del globals()[obj]
-        remove_files(30)
         uploaded_files=st.empty()
         exit(0)
         quit()

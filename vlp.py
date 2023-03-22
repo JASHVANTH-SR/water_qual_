@@ -152,7 +152,7 @@ if st.session_state.uploaded_file is not None:
 
         def load_excel():
             csv = pd.read_excel(st.session_state.uploaded_file)
-        return csv
+            return csv
 
         df = load_excel()
 

@@ -52,7 +52,7 @@ st.markdown(
     """
     <style>
     body {
-        background-color: #ffffff;
+        background-color: #000000;
     }
     .stApp {
         background-color: #f0f0f0;
@@ -65,7 +65,7 @@ st.markdown(
     f"""
     <style>
     body {{
-        color: black;
+        color: white;
     }}
     </style>
     """,

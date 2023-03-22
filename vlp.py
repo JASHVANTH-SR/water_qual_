@@ -45,6 +45,44 @@ from sklearn.model_selection import RandomizedSearchCV,GridSearchCV,RepeatedStra
 # In[2]:
 st.set_page_config(page_title="Water Quality", page_icon="🌾", layout="centered", initial_sidebar_state="auto", menu_items=None)
 st.set_option('deprecation.showPyplotGlobalUse', False)
+#To ensure that the uploaded file is not shared between different users or sessions, you can use the SessionState utility from Streamlit to create a session-specific state object that can be used to store the uploaded file. Here's an updated version of the code that uses SessionState:
+
+#python
+#Copy code
+from streamlit.hashing import _CodeHasher
+from streamlit.report_thread import REPORT_CONTEXT_ATTR_NAME
+from streamlit.server.Server import Server
+
+class SessionState:
+    def __init__(self, **kwargs):
+        for key, val in kwargs.items():
+            setattr(self, key, val)
+
+def get_session():
+    session_id = _get_report_ctx().session_id
+    session = Server.get_current()._session_info_by_id.get(session_id)
+    if session is None:
+        session = Server.get_current().new_session(session_id)
+    return session
+
+def _get_report_ctx():
+    return getattr(st, REPORT_CONTEXT_ATTR_NAME, None)
+
+def _get_session():
+    session = get_session()
+    if session is None:
+        raise RuntimeError("Couldn't get Streamlit session.")
+    if not hasattr(session, "_custom_session_state"):
+        session._custom_session_state = SessionState(**{})
+    return session._custom_session_state
+
+# Define the function to load the Excel file and cache the data
+@st.cache
+def load_excel(file):
+    csv = pd.read_excel(file)
+    return csv
+
+# Define the Streamlit app
 
 try:
     os.mkdir("temp")
@@ -125,9 +163,18 @@ st.markdown('''### This is the **Study App** created in Streamlit using the **pa
 runvoice("This is the Software used to study the Characteristics of Water. This software is created in Streamlit using Scikit-learn and plotly package.\
     Courtesy :  Software built in 'Python' and 'Streamlit' by JASHVANTH S R,BALAJI S,HARUL GANESH S B,GOWTHAM H")
 
-try:
-    uploaded_file=st.text_input("Enter the dataset excel")
-    df=pd.read_excel(uploaded_file)
+session_state = _get_session()
+if not hasattr(session_state, "uploaded_file"):
+    session_state.uploaded_file = None
+uploaded_file = session_state.uploaded_file
+new_file = st.file_uploader("Choose an Excel file", type="xlsx")
+if new_file is not None:
+    uploaded_file = new_file
+    session_state.uploaded_file = uploaded_file
+
+# If a file is uploaded, load the data and display it in a table
+if uploaded_file is not None:
+    df = load_excel(uploaded_file)
 
     colors_blue = ["#132C33", "#264D58", '#17869E', '#51C4D3', '#B4DBE9']
     colors_dark = ["#1F1F1F", "#313131", '#636363', '#AEAEAE', '#DADADA']

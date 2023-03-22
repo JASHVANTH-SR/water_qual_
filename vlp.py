@@ -62,16 +62,15 @@ st.markdown(
     unsafe_allow_html=True
 )
 st.markdown(
-    """
+    f"""
     <style>
-    body {
-        color: #000000;
-    }
+    body {{
+        color: black;
+    }}
     </style>
     """,
     unsafe_allow_html=True
-)
-#python
+)#python
 #Copy code
 import hashlib
 

@@ -142,16 +142,12 @@ runvoice("This is the Software used to study the Characteristics of Water. This 
 
 new_file = st.file_uploader("Choose an Excel file", type="xlsx")
 if new_file is not None:
-    uploaded_file = new_file
-    file_hash = hashlib.sha256(uploaded_file.read()).hexdigest()
-    st.session_state.uploaded_file = uploaded_file
-
-# If a file is uploaded, load the data and display it in a table
-if st.session_state.uploaded_file is not None:
-        @st.cache_data
-
+   if uploaded_file is not None:
+        st.session_state.data = pd.read_excel(uploaded_file, engine="openpyxl")    
+    if "data" in st.session_state:
+        st.write(st.session_state.data)
         def load_excel():
-            csv = pd.read_excel(st.session_state.uploaded_file)
+            csv = pd.read_excel(st.session_state.data)
             return csv
 
         df = load_excel()

@@ -146,9 +146,9 @@ if new_file is not None:
         st.session_state.data = pd.read_excel(uploaded_file, engine="openpyxl")    
     if "data" in st.session_state:
         st.write(st.session_state.data)
-        def load_excel():
-            csv = pd.read_excel(st.session_state.data)
-            return csv
+    def load_excel():
+        csv = pd.read_excel(st.session_state.data)
+        return csv
 
         df = load_excel()
 

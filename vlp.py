@@ -139,7 +139,7 @@ st.markdown('''### This is the **Study App** created in Streamlit using the **pa
 runvoice("This is the Software used to study the Characteristics of Water. This software is created in Streamlit using Scikit-learn and plotly package.\
     Courtesy :  Software built in 'Python' and 'Streamlit' by JASHVANTH S R,BALAJI S,HARUL GANESH S B,GOWTHAM H")
 
-uploaded_file = session_state.uploaded_file
+
 new_file = st.file_uploader("Choose an Excel file", type="xlsx")
 if new_file is not None:
     uploaded_file = new_file

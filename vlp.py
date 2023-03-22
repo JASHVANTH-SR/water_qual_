@@ -50,34 +50,10 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 #python
 #Copy code
 import hashlib
-from streamlit.report_thread import REPORT_CONTEXT_ATTR_NAME
-from streamlit.server.Server import Server
 
-class SessionState:
-    def __init__(self, **kwargs):
-        for key, val in kwargs.items():
-            setattr(self, key, val)
-
-def get_session():
-    session_id = _get_report_ctx().session_id
-    session = Server.get_current()._session_info_by_id.get(session_id)
-    if session is None:
-        session = Server.get_current().new_session(session_id)
-    return session
-
-def _get_report_ctx():
-    return getattr(st, REPORT_CONTEXT_ATTR_NAME, None)
-
-def _get_session():
-    session = get_session()
-    if session is None:
-        raise RuntimeError("Couldn't get Streamlit session.")
-    if not hasattr(session, "_custom_session_state"):
-        session._custom_session_state = SessionState(**{})
-    return session._custom_session_state
 
 # Define the function to load the Excel file and cache the data
-@st.cache
+@st.cache_data
 def load_excel(file):
     csv = pd.read_excel(file)
     return csv

@@ -141,6 +141,7 @@ runvoice("This is the Software used to study the Characteristics of Water. This 
 
 
 new_file = st.file_uploader("Choose an Excel file", type="xlsx")
+uploaded_file=new_file
 if new_file is not None:
    st.session_state.data = pd.read_excel(uploaded_file, engine="openpyxl")    
    if "data" in st.session_state:

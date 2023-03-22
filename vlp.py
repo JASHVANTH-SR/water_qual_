@@ -147,8 +147,8 @@ if new_file is not None:
     session_state.uploaded_file = uploaded_file
 
 # If a file is uploaded, load the data and display it in a table
-if uploaded_file is not None:
-    df = load_excel(uploaded_file)
+if session_state.uploaded_file is not None:
+    df = load_excel(session_state.uploaded_file)
 
     colors_blue = ["#132C33", "#264D58", '#17869E', '#51C4D3', '#B4DBE9']
     colors_dark = ["#1F1F1F", "#313131", '#636363', '#AEAEAE', '#DADADA']

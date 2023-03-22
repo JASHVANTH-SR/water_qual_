@@ -49,7 +49,7 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 
 #python
 #Copy code
-from streamlit.hashing import _CodeHasher
+import hashlib
 from streamlit.report_thread import REPORT_CONTEXT_ATTR_NAME
 from streamlit.server.Server import Server
 
@@ -170,6 +170,7 @@ uploaded_file = session_state.uploaded_file
 new_file = st.file_uploader("Choose an Excel file", type="xlsx")
 if new_file is not None:
     uploaded_file = new_file
+    file_hash = hashlib.sha256(uploaded_file.read()).hexdigest()
     session_state.uploaded_file = uploaded_file
 
 # If a file is uploaded, load the data and display it in a table

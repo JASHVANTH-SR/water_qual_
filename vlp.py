@@ -825,9 +825,6 @@ if new_file is not None:
     for obj in d:
         if not obj.startswith('__'):
             del globals()[obj]
-    uploaded_files=st.empty()
-    exit(0)
-    quit()
 
 # In[ ]:
 

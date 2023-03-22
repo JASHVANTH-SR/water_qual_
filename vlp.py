@@ -48,29 +48,7 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 #To ensure that the uploaded file is not shared between different users or sessions, you can use the SessionState utility from Streamlit to create a session-specific state object that can be used to store the uploaded file. Here's an updated version of the code that uses SessionState:
 
 
-st.markdown(
-    """
-    <style>
-    body {
-        background-color: #000000;
-    }
-    .stApp {
-        background-color: #f0f0f0;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-st.markdown(
-    f"""
-    <style>
-    body {{
-        color: white;
-    }}
-    </style>
-    """,
-    unsafe_allow_html=True
-)#python
+#python
 #Copy code
 import hashlib
 

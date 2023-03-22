@@ -835,8 +835,6 @@ if uploaded_file is not None:
         exit(0)
         quit()
         
-except FileNotFoundError:
-    print(" ")
     # In[ ]:
 
 

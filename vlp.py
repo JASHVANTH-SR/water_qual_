@@ -811,14 +811,12 @@ else:
             else:
                 return pd.DataFrame()
 
-        st.title('Load Excel file')
         selected_option = st.selectbox(
             "Select an Example District based Dataset:",
             ("Chengalpattu", "Kancheepuram", "Thiruvallur", "Villupuram", "vellore"),
         )
 
-        if st.button('Load Dataset'):
-            df = load_excel(selected_option)
+        df = load_excel(selected_option)
                 # In[4]:
 
 

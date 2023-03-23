@@ -154,7 +154,6 @@ if new_file is not None:
             return pd.DataFrame()
 if st.button('Press to use Example Dataset'):
     runvoice(text="Press to use Example Dataset")
-    @st.cache_data
     options = ['Chengalpattu', 'Kancheepuram', 'Thiruvallur','Villupuram','vellore']
 
     # Create the selectbox and store the user's selection
@@ -173,6 +172,7 @@ if st.button('Press to use Example Dataset'):
                 st.session_state.data='vlr.xlsx'
     else:
         st.write('Please select an option properly')
+    @st.cache_data
     def load_excel():
         if "data" in st.session_state:
                 return st.session_state.data           

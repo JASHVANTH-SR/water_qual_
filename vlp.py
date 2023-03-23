@@ -1471,15 +1471,15 @@ else:
 
     # In[57]:
 
-    st.markdown("#### Best Algorithm for Supervised Machine Learning for our Data ")
-    runvoice("Best Algorithm for Supervised Machine Learning for our Data")
-    time.sleep(2)    
-    finalResults
+        st.markdown("#### Best Algorithm for Supervised Machine Learning for our Data ")
+        runvoice("Best Algorithm for Supervised Machine Learning for our Data")
+        time.sleep(2)    
+        finalResults
 
-    d=dir()
-    for obj in d:
-        if not obj.startswith('__'):
-            del globals()[obj]
+        d=dir()
+        for obj in d:
+            if not obj.startswith('__'):
+                del globals()[obj]
 
 st.markdown("Colours Used in this Visualization")
 colors_blue = ["#132C33", "#264D58", '#17869E', '#51C4D3', '#B4DBE9']

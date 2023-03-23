@@ -162,15 +162,15 @@ if st.button('Press to use Example Dataset'):
     ("Chengalpattu", "Kancheepuram", "Thiruvallur", "Villupuram", "vellore"),)
     # Use the selected value to trigger further processing
     if selected_option == 'Chengalpattu':
-                st.session_state.data=cgl.xlsx
+                st.session_state.data="https://github.com/JASHVANTH-SR/water_qual_/blob/e76a25e4cb6746221211ee9d5b83f7e828eba03f/cgl.xlsx"
     elif selected_option == 'Kancheepuram':
-                st.session_state.data=kanch.xlsx
+                st.session_state.data="https://github.com/JASHVANTH-SR/water_qual_/blob/e76a25e4cb6746221211ee9d5b83f7e828eba03f/kanch.xlsx"
     elif selected_option == 'Thiruvallur':
-                st.session_state.data=trl.xlsx
+                st.session_state.data="https://github.com/JASHVANTH-SR/water_qual_/blob/dbd36926ac669fb412c6fef48f087d2d779c288c/trl.xlsx"
     elif selected_option == 'Villupuram':
-                st.session_state.data=vlp.xlsx
+                st.session_state.data="https://github.com/JASHVANTH-SR/water_qual_/blob/e76a25e4cb6746221211ee9d5b83f7e828eba03f/vlp.xlsx"
     elif selected_option == 'vellore':
-                st.session_state.data=vlr.xlsx
+                st.session_state.data="https://github.com/JASHVANTH-SR/water_qual_/blob/e76a25e4cb6746221211ee9d5b83f7e828eba03f/vlr.xlsx"
     else:
         st.write('Please select an option properly')
     @st.cache_data

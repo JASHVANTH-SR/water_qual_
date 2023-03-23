@@ -793,12 +793,12 @@ if new_file is not None:
         finalResults.sort(key=lambda k:k[1],reverse=True)
     except ValueError:
         print(' ')
-
+    st._clear_caches()
     d=dir()
     for obj in d:
         if not obj.startswith('__'):
             del globals()[obj]
-    st._clear_caches()
+
 else:
     st.info('Awaiting for Excel file to be uploaded.')
     if st.button('Press to use Example Dataset'):

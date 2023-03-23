@@ -795,34 +795,31 @@ if new_file is not None:
         print(' ')
 
 else:
-    st.info('Awaiting for Excel file to be uploaded.')
-    if st.button('Press to use Example Dataset'):
-        runvoice(text="Press to use Example Dataset")
-        selected_option = st.selectbox(
-        "Select a Example District based Datasets :",
-        ("Chengalpattu", "Kancheepuram", "Thiruvallur", "Villupuram", "vellore"),)
-        # Use the selected value to trigger further processing
-        if selected_option == 'Chengalpattu':
-                    st.session_state.data=pd.read_excel("cgl.xlsx",engine="openpyxl")
-        elif selected_option == 'Kancheepuram':
-                    st.session_state.data=pd.read_excel("kanch.xlsx",engine="openpyxl")
-        elif selected_option == 'Thiruvallur':
-                    st.session_state.data=pd.read_excel("trl.xlsx",engine="openpyxl")
-        elif selected_option == 'Villupuram':
-                    st.session_state.data=pd.read_excel("vlp.xlsx",engine="openpyxl")
-        elif selected_option == 'vellore':
-                    st.session_state.data=pd.read_excel("vlr.xlsx",engine="openpyxl")
-        else:
-            st.write('Please select an option properly')
-        @st.cache_data
-        def load_excel():
-            if "data" in st.session_state:
-                    return st.session_state.data  
+        st.info('Awaiting for Excel file to be uploaded.')
+        @st.cache
+        def load_excel(selected_option):
+            if selected_option == 'Chengalpattu':
+                return pd.read_excel("cgl.xlsx", engine="openpyxl")
+            elif selected_option == 'Kancheepuram':
+                return pd.read_excel("kanch.xlsx", engine="openpyxl")
+            elif selected_option == 'Thiruvallur':
+                return pd.read_excel("trl.xlsx", engine="openpyxl")
+            elif selected_option == 'Villupuram':
+                return pd.read_excel("vlp.xlsx", engine="openpyxl")
+            elif selected_option == 'vellore':
+                return pd.read_excel("vlr.xlsx", engine="openpyxl")
             else:
-                    return pd.DataFrame()
-        df = load_excel()
+                return pd.DataFrame()
 
-        # In[4]:
+        st.title('Load Excel file')
+        selected_option = st.selectbox(
+            "Select an Example District based Dataset:",
+            ("Chengalpattu", "Kancheepuram", "Thiruvallur", "Villupuram", "vellore"),
+        )
+
+        if st.button('Load Dataset'):
+            df = load_excel(selected_option)
+                # In[4]:
 
 
 

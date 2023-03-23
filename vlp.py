@@ -794,7 +794,10 @@ if new_file is not None:
     except ValueError:
         print(' ')
 
-
+        d=dir()
+        for obj in d:
+            if not obj.startswith('__'):
+                del globals()[obj]
 else:
     st.info('Awaiting for Excel file to be uploaded.')
     if st.button('Press to use Example Dataset'):

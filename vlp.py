@@ -1490,10 +1490,6 @@ st.markdown('''### This is the **Study App** created in Streamlit using the **pa
 ---
 ''')
 # In[ ]:
-d=dir()
-for obj in d:
-    if not obj.startswith('__'):
-        del globals()[obj]
 
 
 

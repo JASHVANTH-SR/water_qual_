@@ -163,15 +163,15 @@ if st.button('Press to use Example Dataset'):
     ("Chengalpattu", "Kancheepuram", "Thiruvallur", "Villupuram", "vellore"),)
     # Use the selected value to trigger further processing
     if selected_option == 'Chengalpattu':
-                st.session_state.data='cgl.xlsx'
+                st.session_state.data=cgl.xlsx
     elif selected_option == 'Kancheepuram':
-                st.session_state.data='kanch.xlsx'
+                st.session_state.data=kanch.xlsx
     elif selected_option == 'Thiruvallur':
-                st.session_state.data='trl.xlsx'
+                st.session_state.data=trl.xlsx
     elif selected_option == 'Villupuram':
-                st.session_state.data='vlp.xlsx'
+                st.session_state.data=vlp.xlsx
     elif selected_option == 'vellore':
-                st.session_state.data='vlr.xlsx'
+                st.session_state.data=vlr.xlsx
     else:
         st.write('Please select an option properly')
     @st.cache_data

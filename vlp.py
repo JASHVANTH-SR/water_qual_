@@ -158,8 +158,7 @@ if st.button('Press to use Example Dataset'):
 
 
     # Create the selectbox and store the user's selection
-    selected_option = st.selectbox('', options)
-    in_lang = st.selectbox(
+    selected_option = st.selectbox(
     "Select a Example District based Datasets :",
     ("Chengalpattu", "Kancheepuram", "Thiruvallur", "Villupuram", "vellore"),)
     # Use the selected value to trigger further processing
@@ -178,7 +177,9 @@ if st.button('Press to use Example Dataset'):
     @st.cache_data
     def load_excel():
         if "data" in st.session_state:
-                return st.session_state.data           
+                return st.session_state.data  
+        else:
+                return pd.DataFrame()
     df = load_excel()
 
     # In[4]:

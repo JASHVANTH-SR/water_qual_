@@ -153,30 +153,30 @@ if new_file is not None:
         else:
             return pd.DataFrame()
 if st.button('Press to use Example Dataset'):
-            runvoice(text="Press to use Example Dataset")
-            @st.cache_data
-            options = ['Chengalpattu', 'Kancheepuram', 'Thiruvallur','Villupuram','vellore']
+    runvoice(text="Press to use Example Dataset")
+    @st.cache_data
+    options = ['Chengalpattu', 'Kancheepuram', 'Thiruvallur','Villupuram','vellore']
 
-            # Create the selectbox and store the user's selection
-            selected_option = st.selectbox('Select a Example District based Datasets :', options)
+    # Create the selectbox and store the user's selection
+    selected_option = st.selectbox('Select a Example District based Datasets :', options)
 
-            # Use the selected value to trigger further processing
-            if selected_option == 'Chengalpattu':
-                        st.session_state.data='cgl.xlsx'
-            elif selected_option == 'Kancheepuram':
-                        st.session_state.data='kanch.xlsx'
-            elif selected_option == 'Thiruvallur':
-                        st.session_state.data='trl.xlsx'
-            elif selected_option == 'Villupuram':
-                        st.session_state.data='vlp.xlsx'
-            elif selected_option == 'vellore':
-                        st.session_state.data='vlr.xlsx'
-            else:
-                st.write('Please select an option properly')
-            def load_excel():
-                if "data" in st.session_state:
-                        return st.session_state.data           
-            df = load_excel()
+    # Use the selected value to trigger further processing
+    if selected_option == 'Chengalpattu':
+                st.session_state.data='cgl.xlsx'
+    elif selected_option == 'Kancheepuram':
+                st.session_state.data='kanch.xlsx'
+    elif selected_option == 'Thiruvallur':
+                st.session_state.data='trl.xlsx'
+    elif selected_option == 'Villupuram':
+                st.session_state.data='vlp.xlsx'
+    elif selected_option == 'vellore':
+                st.session_state.data='vlr.xlsx'
+    else:
+        st.write('Please select an option properly')
+    def load_excel():
+        if "data" in st.session_state:
+                return st.session_state.data           
+    df = load_excel()
 
     # In[4]:
 

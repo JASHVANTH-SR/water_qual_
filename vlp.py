@@ -793,7 +793,7 @@ if new_file is not None:
         finalResults.sort(key=lambda k:k[1],reverse=True)
     except ValueError:
         print(' ')
-    st._clear_caches()
+
     d=dir()
     for obj in d:
         if not obj.startswith('__'):
@@ -1482,7 +1482,7 @@ else:
         time.sleep(2)    
         finalResults
 
-        st.clear_cache()        
+
         d=dir()
         for obj in d:
             if not obj.startswith('__'):

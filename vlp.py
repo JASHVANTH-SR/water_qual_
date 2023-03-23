@@ -152,6 +152,7 @@ if new_file is not None:
             return st.session_state.data
         else:
             return pd.DataFrame()
+    df=st.session_state.data
 if st.button('Press to use Example Dataset'):
     runvoice(text="Press to use Example Dataset")
     options = ['Chengalpattu', 'Kancheepuram', 'Thiruvallur','Villupuram','vellore']

@@ -1482,11 +1482,11 @@ else:
         time.sleep(2)    
         finalResults
 
+        st.caching.clear_cache()        
         d=dir()
         for obj in d:
             if not obj.startswith('__'):
                 del globals()[obj]
-        st.caching.clear_cache()
 
 
 st.markdown("Colours Used in this Visualization")

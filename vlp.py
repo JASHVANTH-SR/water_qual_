@@ -194,7 +194,7 @@ if new_file is not None:
     # In[7]:
 
     st.markdown("### Total Dissolved Solids")
-    st.image(Image.open("SOLIDS IN WATER.jpg"), width=150, height=150)
+    st.image(Image.open("SOLIDS IN WATER.jpg"))
     st.markdown("Total dissolved solids (TDS) is a measure of the dissolved combined content of all inorganic and organic substances present in a liquid in molecular,\
      ionized, or micro-granular (colloidal sol) suspended form.\
      TDS concentrations are often reported in parts per million (ppm). Water TDS concentrations can be determined using a digital meter.")
@@ -340,7 +340,7 @@ if new_file is not None:
     # In[12]:
 
     st.markdown("### Potassium")
-    st.image(Image.open("K.png"), width=150, height=150)
+    st.image(Image.open("K.png"))
     st.markdown("Potassium is the chemical element with the symbol K and atomic number 19. It is a silvery white metal that is soft enough to easily cut with a knife.\
         Potassium is an essential mineral that is needed by all tissues in the body. It is sometimes referred to as an electrolyte because it carries a small electrical charge that activates various cell and nerve functions. Potassium is found naturally in many foods and as a supplement.")
     runvoice("Potassium is the chemical element with the symbol K and atomic number 19. It is a silvery white metal that is soft enough to easily cut with a knife.\

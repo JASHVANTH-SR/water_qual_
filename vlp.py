@@ -144,8 +144,6 @@ new_file = st.file_uploader("Choose an Excel file", type="xlsx")
 
 if new_file is not None:
     st.session_state.data = pd.read_excel(new_file, engine="openpyxl")    
-    if "data" in st.session_state:
-        st.write(st.session_state.data)
     @st.cache_data
     def load_excel():
         if "data" in st.session_state:
@@ -162,15 +160,15 @@ if st.button('Press to use Example Dataset'):
     ("Chengalpattu", "Kancheepuram", "Thiruvallur", "Villupuram", "vellore"),)
     # Use the selected value to trigger further processing
     if selected_option == 'Chengalpattu':
-                st.session_state.data="https://github.com/JASHVANTH-SR/water_qual_/blob/e76a25e4cb6746221211ee9d5b83f7e828eba03f/cgl.xlsx"
+                st.session_state.data=pd.read_excel("https://github.com/JASHVANTH-SR/water_qual_/blob/e76a25e4cb6746221211ee9d5b83f7e828eba03f/cgl.xlsx",engine="openpyxl")
     elif selected_option == 'Kancheepuram':
-                st.session_state.data="https://github.com/JASHVANTH-SR/water_qual_/blob/e76a25e4cb6746221211ee9d5b83f7e828eba03f/kanch.xlsx"
+                st.session_state.data=pd.read_excel("https://github.com/JASHVANTH-SR/water_qual_/blob/e76a25e4cb6746221211ee9d5b83f7e828eba03f/kanch.xlsx",engine="openpyxl")
     elif selected_option == 'Thiruvallur':
-                st.session_state.data="https://github.com/JASHVANTH-SR/water_qual_/blob/dbd36926ac669fb412c6fef48f087d2d779c288c/trl.xlsx"
+                st.session_state.data=pd.read_excel("https://github.com/JASHVANTH-SR/water_qual_/blob/dbd36926ac669fb412c6fef48f087d2d779c288c/trl.xlsx",engine="openpyxl")
     elif selected_option == 'Villupuram':
-                st.session_state.data="https://github.com/JASHVANTH-SR/water_qual_/blob/e76a25e4cb6746221211ee9d5b83f7e828eba03f/vlp.xlsx"
+                st.session_state.data=pd.read_excel("https://github.com/JASHVANTH-SR/water_qual_/blob/e76a25e4cb6746221211ee9d5b83f7e828eba03f/vlp.xlsx",engine="openpyxl")
     elif selected_option == 'vellore':
-                st.session_state.data="https://github.com/JASHVANTH-SR/water_qual_/blob/e76a25e4cb6746221211ee9d5b83f7e828eba03f/vlr.xlsx"
+                st.session_state.data=pd.read_excel("https://github.com/JASHVANTH-SR/water_qual_/blob/e76a25e4cb6746221211ee9d5b83f7e828eba03f/vlr.xlsx",engine="openpyxl")
     else:
         st.write('Please select an option properly')
     @st.cache_data

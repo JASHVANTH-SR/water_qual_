@@ -793,6 +793,7 @@ if new_file is not None:
         finalResults.sort(key=lambda k:k[1],reverse=True)
     except ValueError:
         print(' ')
+    st.caching.clear_cache()
 
         d=dir()
         for obj in d:
@@ -1485,6 +1486,8 @@ else:
         for obj in d:
             if not obj.startswith('__'):
                 del globals()[obj]
+        st.caching.clear_cache()
+
 
 st.markdown("Colours Used in this Visualization")
 st.pyplot(sns.palplot(colors_blue))
@@ -1496,6 +1499,7 @@ st.markdown('''### This is the **Study App** created in Streamlit using the **pa
 ---
 ''')
 # In[ ]:
+st.caching.clear_cache()
 
 
 

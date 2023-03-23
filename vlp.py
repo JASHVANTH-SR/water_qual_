@@ -795,10 +795,10 @@ if new_file is not None:
         print(' ')
     st.caching.clear_cache()
 
-        d=dir()
-        for obj in d:
-            if not obj.startswith('__'):
-                del globals()[obj]
+    d=dir()
+    for obj in d:
+        if not obj.startswith('__'):
+            del globals()[obj]
 else:
     st.info('Awaiting for Excel file to be uploaded.')
     if st.button('Press to use Example Dataset'):

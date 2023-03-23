@@ -1477,10 +1477,6 @@ else:
 
 
 
-st.markdown("Colours Used in this Visualization")
-st.pyplot(sns.palplot(colors_blue))
-st.pyplot(sns.palplot(colors_green))
-st.pyplot(sns.palplot(colors_dark))
 
 st.markdown('''### This is the **Study App** created in Streamlit using the **pandas-profiling** library.
 ****Credit:**** App built in `Python` + `Streamlit` by [JASHVANTH S R ](https://www.linkedin.com/in/jashvanth-s-r-476646213)[HARUL GANESH S B ](https://www.linkedin.com/in/harul-ganesh/)[BALAJI S ](https://www.linkedin.com/in/balaji-s-csbs-dept-03790a202/)[GOWTHAM H](https://www.linkedin.com/in/gowtham-haribabu-9425861bb/)

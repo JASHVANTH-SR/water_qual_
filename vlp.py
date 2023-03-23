@@ -794,11 +794,6 @@ if new_file is not None:
     except ValueError:
         print(' ')
 
-    d=dir()
-    for obj in d:
-        if not obj.startswith('__'):
-            del globals()[obj]
-
 else:
     st.info('Awaiting for Excel file to be uploaded.')
     if st.button('Press to use Example Dataset'):
@@ -1483,10 +1478,6 @@ else:
         finalResults
 
 
-        d=dir()
-        for obj in d:
-            if not obj.startswith('__'):
-                del globals()[obj]
 
 
 st.markdown("Colours Used in this Visualization")
@@ -1499,6 +1490,10 @@ st.markdown('''### This is the **Study App** created in Streamlit using the **pa
 ---
 ''')
 # In[ ]:
+d=dir()
+for obj in d:
+    if not obj.startswith('__'):
+        del globals()[obj]
 
 
 

@@ -145,8 +145,8 @@ colors_green = ['#01411C','#4B6F44','#4F7942','#74C365','#D0F0C0']
 new_file = st.file_uploader("Choose an Excel file", type="xlsx")
 
 if new_file is not None:
+    @st.cache(allow_output_mutation=True)    
     st.session_state.data = pd.read_excel(new_file, engine="openpyxl")    
-    @st.cache_data
     def load_excel():
         if "data" in st.session_state:
             return st.session_state.data

@@ -1499,7 +1499,6 @@ st.markdown('''### This is the **Study App** created in Streamlit using the **pa
 ---
 ''')
 # In[ ]:
-st.caching.clear_cache()
 
 
 

@@ -802,15 +802,15 @@ else:
         ("Chengalpattu", "Kancheepuram", "Thiruvallur", "Villupuram", "vellore"),)
         # Use the selected value to trigger further processing
         if selected_option == 'Chengalpattu':
-                    st.session_state.data=pd.read_excel("https://github.com/JASHVANTH-SR/water_qual_/blob/e76a25e4cb6746221211ee9d5b83f7e828eba03f/cgl.xlsx",engine="openpyxl")
+                    st.session_state.data=pd.read_excel("cgl.xlsx",engine="openpyxl")
         elif selected_option == 'Kancheepuram':
-                    st.session_state.data=pd.read_excel("https://github.com/JASHVANTH-SR/water_qual_/blob/e76a25e4cb6746221211ee9d5b83f7e828eba03f/kanch.xlsx",engine="openpyxl")
+                    st.session_state.data=pd.read_excel("kanch.xlsx",engine="openpyxl")
         elif selected_option == 'Thiruvallur':
-                    st.session_state.data=pd.read_excel("https://github.com/JASHVANTH-SR/water_qual_/blob/dbd36926ac669fb412c6fef48f087d2d779c288c/trl.xlsx",engine="openpyxl")
+                    st.session_state.data=pd.read_excel("trl.xlsx",engine="openpyxl")
         elif selected_option == 'Villupuram':
-                    st.session_state.data=pd.read_excel("https://github.com/JASHVANTH-SR/water_qual_/blob/e76a25e4cb6746221211ee9d5b83f7e828eba03f/vlp.xlsx",engine="openpyxl")
+                    st.session_state.data=pd.read_excel("vlp.xlsx",engine="openpyxl")
         elif selected_option == 'vellore':
-                    st.session_state.data=pd.read_excel("https://github.com/JASHVANTH-SR/water_qual_/blob/e76a25e4cb6746221211ee9d5b83f7e828eba03f/vlr.xlsx",engine="openpyxl")
+                    st.session_state.data=pd.read_excel("vlr.xlsx",engine="openpyxl")
         else:
             st.write('Please select an option properly')
         @st.cache_data

@@ -155,11 +155,13 @@ if new_file is not None:
     df=st.session_state.data
 if st.button('Press to use Example Dataset'):
     runvoice(text="Press to use Example Dataset")
-    options = ['Chengalpattu', 'Kancheepuram', 'Thiruvallur','Villupuram','vellore']
+
 
     # Create the selectbox and store the user's selection
-    selected_option = st.selectbox('Select a Example District based Datasets :', options)
-
+    selected_option = st.selectbox('', options)
+    in_lang = st.selectbox(
+    "Select a Example District based Datasets :",
+    ("Chengalpattu", "Kancheepuram", "Thiruvallur", "Villupuram", "vellore"),)
     # Use the selected value to trigger further processing
     if selected_option == 'Chengalpattu':
                 st.session_state.data='cgl.xlsx'

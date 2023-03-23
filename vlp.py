@@ -146,11 +146,10 @@ time.sleep(2)
 new_file = st.file_uploader("Choose an Excel file", type="xlsx")
 
 if new_file is not None:
-    @st.cache_data
     st.session_state.data = pd.read_excel(new_file, engine="openpyxl")    
     if "data" in st.session_state:
         st.write(st.session_state.data)
-        
+    @st.cache_data
     def load_excel():
         if "data" in st.session_state:
             return st.session_state.data

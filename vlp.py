@@ -139,7 +139,9 @@ runvoice("The Water Quality Analysis App")
 runvoice("This is the Software used to study the Characteristics of Water. This software is created in Streamlit using Scikit-learn and plotly package.\
     Courtesy :  Software built in 'Python' and 'Streamlit' by JASHVANTH S R,BALAJI S,HARUL GANESH S B,GOWTHAM H")
 time.sleep(2)
-
+colors_blue = ["#132C33", "#264D58", '#17869E', '#51C4D3', '#B4DBE9']
+colors_dark = ["#1F1F1F", "#313131", '#636363', '#AEAEAE', '#DADADA']
+colors_green = ['#01411C','#4B6F44','#4F7942','#74C365','#D0F0C0']
 new_file = st.file_uploader("Choose an Excel file", type="xlsx")
 
 if new_file is not None:
@@ -1482,9 +1484,6 @@ else:
                 del globals()[obj]
 
 st.markdown("Colours Used in this Visualization")
-colors_blue = ["#132C33", "#264D58", '#17869E', '#51C4D3', '#B4DBE9']
-colors_dark = ["#1F1F1F", "#313131", '#636363', '#AEAEAE', '#DADADA']
-colors_green = ['#01411C','#4B6F44','#4F7942','#74C365','#D0F0C0']
 st.pyplot(sns.palplot(colors_blue))
 st.pyplot(sns.palplot(colors_green))
 st.pyplot(sns.palplot(colors_dark))

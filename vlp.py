@@ -70,6 +70,9 @@ except:
 
 # In[3]:
 translator = Translator()
+st.title('''
+The Water Quality Analysis App''')
+
 image = Image.open('tvalluvar.jpeg')
 st.image(image)
 st.markdown("நீரின்று அமையாது உலகெனின் யார்யார்க்கும்") 
@@ -127,8 +130,6 @@ def runvoice(text):
 
 image = Image.open('tree.jpg')
 st.image(image)
-st.title('''
-The Water Quality Analysis App''')
 
 
 

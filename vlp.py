@@ -766,7 +766,7 @@ if new_file is not None:
     X_train = scaler.transform(X_train)
     X_test = scaler.transform(X_test)
     
-    if st.button('Individual Details of Well'):
+    if st.button('Individual Details of Well',on_click=None):
         df['Date of collection'] = pd.to_datetime(df['Date of collection']).dt.strftime('%Y-%m-%d %H:%M:%S')
         # Set up Plotly figure
         well_nos = df["Well No"].unique()
@@ -802,7 +802,7 @@ if new_file is not None:
 
     # In[56]:
 
-    if st.button('Wanna Check Accuracy oF Data'):
+    if st.button('Wanna Check Accuracy oF Data',on_click=None):
         try:
             filterwarnings('ignore')
             models =[("LR", LogisticRegression(max_iter=1000)),("SVC", SVC()),('KNN',KNeighborsClassifier(n_neighbors=10)),
@@ -830,7 +830,7 @@ if new_file is not None:
 
 else:
         st.info('Awaiting for Excel file to be uploaded.')
-        if st.button('Press to use Example Dataset'):
+        if st.button('Press to use Example Dataset',,on_click=None):
             runvoice(text="Press to use Example Dataset")
             @st.cache(allow_output_mutation=True,suppress_st_warning=True)
             def load_excel(selected_option):

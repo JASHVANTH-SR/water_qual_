@@ -830,7 +830,7 @@ if new_file is not None:
 
 else:
         st.info('Awaiting for Excel file to be uploaded.')
-        if st.button('Press to use Example Dataset',,on_click=None):
+        if st.button('Press to use Example Dataset',on_click=None):
             runvoice(text="Press to use Example Dataset")
             @st.cache(allow_output_mutation=True,suppress_st_warning=True)
             def load_excel(selected_option):

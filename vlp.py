@@ -118,7 +118,7 @@ def runvoice(text):
         result, output_text = text_to_speech(input_language, output_language, text)
         audio_file = open(f"temp/{result}.mp3", "rb+")
         audio_bytes = audio_file.read()
-        time.sleep(5)
+        time.sleep(2.5)
         st.audio(audio_bytes, format="audio/mp3",start_time=0)
         st.write(f" {output_text}")
     except Exception as e:

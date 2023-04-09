@@ -55,10 +55,6 @@ import hashlib
 
 
 # Define the function to load the Excel file and cache the data
-@st.cache_data
-def load_excel(file):
-    csv = pd.read_excel(file)
-    return csv
 
 # Define the Streamlit app
 
@@ -1478,40 +1474,67 @@ else:
             # In[56]:
 
 
-            try:
-                filterwarnings('ignore')
-                models =[("LR", LogisticRegression(max_iter=1000)),("SVC", SVC()),('KNN',KNeighborsClassifier(n_neighbors=10)),
-                         ("DTC", DecisionTreeClassifier()),("GNB", GaussianNB()),
-                        ("SGDC", SGDClassifier()),("Perc", Perceptron()),("NC",NearestCentroid()),
-                        ("Ridge", RidgeClassifier()),("NuSVC", NuSVC()),("BNB", BernoulliNB()),
-                         ('RF',RandomForestClassifier()),('ADA',AdaBoostClassifier()),
-                        ('XGB',GradientBoostingClassifier()),('PAC',PassiveAggressiveClassifier())]
+            if st.button('Individual Details of Well',on_click=None):
+                df['Date of collection'] = pd.to_datetime(df['Date of collection']).dt.strftime('%Y-%m-%d %H:%M:%S')
+                # Set up Plotly figure
+                well_nos = df["Well No"].unique()
+                tahsils = df["Tahsil / Taluk"].unique()
+                params = ["TDS", "NO2+NO3", "Ca", "Mg", "Na", "K", "Cl", "SO4", "CO3", "HCO3", "F", "pH_GEN", "EC_GEN", "HAR_Total", "SAR", "RSC", "Na%"]
 
-                results = []
-                names = []
-                finalResults = []
+                # Create the streamlit app
+                st.title("Water Potability Dataset")
 
-                for name,model in models:
-                    model.fit(X_train, y_train)
-                    model_results = model.predict(X_test)
-                    score = precision_score(y_test, model_results,average='macro')
-                    results.append(score)
-                    names.append(name)
-                    finalResults.append((name,score))
+                # Choose the Tahsil / Taluk, Well No and parameter
+                tahsil = st.selectbox("Choose a Tahsil / Taluk", tahsils)
+                filtered_df = df[(df["Tahsil / Taluk"] == tahsil)]
+                well_no = st.selectbox("Choose a Well No", filtered_df["Well No"].unique())
+                param = st.selectbox("Choose a parameter", params)
 
-                finalResults.sort(key=lambda k:k[1],reverse=True)
-            except ValueError:
-                print(' ')
+                # Filter the dataset for the chosen Well No and parameter
+                filtered_df = filtered_df[(filtered_df["Well No"] == well_no)][["Date of collection", param, "potability"]]
+
+                # Plot the animated representation of the chosen parameter for the chosen well
+                fig = px.scatter(filtered_df, x="Date of collection", y=param, color="potability", range_y=[0, filtered_df[param].max()], text=param)
+                fig.update_traces(mode="markers", hovertemplate="Date: %{x}<br>Value: %{text:.2f}")
+                fig.update_layout(title=f"{param} for Well No {well_no} in {tahsil}", xaxis_title="Date of collection", yaxis_title=param, showlegend=True)
+
+                # Show the plot
+                st.plotly_chart(fig)
+
+                # Show the potability classification for the chosen well and parameter
+                st.write(f"Potability of Well No {well_no} for {param}:")
+                for date, potability in filtered_df[["Date of collection", "potability"]].itertuples(index=False):
+                    st.write(f"- Date: {date}, Potability: {potability}")
 
 
-        # In[57]:
 
-            st.markdown("#### Best Algorithm for Supervised Machine Learning for our Data ")
-            runvoice("Best Algorithm for Supervised Machine Learning for our Data")
-            time.sleep(2)    
-            finalResults
+            # In[56]:
 
+            if st.button('Wanna Check Accuracy oF Data',on_click=None):
+                try:
+                    filterwarnings('ignore')
+                    models =[("LR", LogisticRegression(max_iter=1000)),("SVC", SVC()),('KNN',KNeighborsClassifier(n_neighbors=10)),
+                             ("DTC", DecisionTreeClassifier()),("GNB", GaussianNB()),
+                            ("SGDC", SGDClassifier()),("Perc", Perceptron()),("NC",NearestCentroid()),
+                            ("Ridge", RidgeClassifier()),("NuSVC", NuSVC()),("BNB", BernoulliNB()),
+                             ('RF',RandomForestClassifier()),('ADA',AdaBoostClassifier()),
+                            ('XGB',GradientBoostingClassifier()),('PAC',PassiveAggressiveClassifier())]
 
+                    results = []
+                    names = []
+                    finalResults = []
+
+                    for name,model in models:
+                        model.fit(X_train, y_train)
+                        model_results = model.predict(X_test)
+                        score = precision_score(y_test, model_results,average='macro')
+                        results.append(score)
+                        names.append(name)
+                        finalResults.append((name,score))
+
+                    finalResults.sort(key=lambda k:k[1],reverse=True)
+                except ValueError:
+                    print(' ')
 
 
 st.markdown('''### This is the **Study App** created in Streamlit using the **pandas-profiling** library.

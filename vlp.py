@@ -827,6 +827,10 @@ if new_file is not None:
             finalResults.sort(key=lambda k:k[1],reverse=True)
         except ValueError:
             print(' ')
+        st.markdown("#### Best Algorithm for Supervised Machine Learning for our Data ")
+        runvoice("Best Algorithm for Supervised Machine Learning for our Data")
+
+        finalResults
 else:
         st.info('Awaiting for Excel file to be uploaded.')
         if st.button('Press to use Example Dataset'):
@@ -1535,6 +1539,10 @@ else:
                     finalResults.sort(key=lambda k:k[1],reverse=True)
                 except ValueError:
                     print(' ')
+                st.markdown("#### Best Algorithm for Supervised Machine Learning for our Data ")
+                runvoice("Best Algorithm for Supervised Machine Learning for our Data")
+
+                finalResults
 
 
 st.markdown('''### This is the **Study App** created in Streamlit using the **pandas-profiling** library.

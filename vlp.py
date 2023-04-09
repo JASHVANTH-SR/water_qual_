@@ -1,5 +1,7 @@
 # In[1]:
 import streamlit as st
+from streamlit_run_once import run_once
+
 import os
 import time
 import glob
@@ -143,6 +145,7 @@ time.sleep(2)
 colors_blue = ["#132C33", "#264D58", '#17869E', '#51C4D3', '#B4DBE9']
 colors_dark = ["#1F1F1F", "#313131", '#636363', '#AEAEAE', '#DADADA']
 colors_green = ['#01411C','#4B6F44','#4F7942','#74C365','#D0F0C0']
+@run_once
 new_file = st.file_uploader("Choose an Excel file", type="xlsx")
 st.write('''[Example Excel(.xlsx) input file](https://docs.google.com/spreadsheets/d/1_u6TGnnj0Xs-Lkwde2H5MJ4i1o7Trixi/edit?usp=sharing&ouid=114232663325308153395&rtpof=true&sd=true)''')
 if new_file is not None:
@@ -766,6 +769,7 @@ if new_file is not None:
     X_train = scaler.transform(X_train)
     X_test = scaler.transform(X_test)
     
+    @run_once
     if st.button('Individual Details of Well',on_click=None):
         df['Date of collection'] = pd.to_datetime(df['Date of collection']).dt.strftime('%Y-%m-%d %H:%M:%S')
         # Set up Plotly figure
@@ -801,7 +805,7 @@ if new_file is not None:
 
 
     # In[56]:
-
+    @run_once
     if st.button('Wanna Check Accuracy oF Data',on_click=None):
         try:
             filterwarnings('ignore')

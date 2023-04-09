@@ -770,7 +770,7 @@ def app():
         X_train = scaler.transform(X_train)
         X_test = scaler.transform(X_test)
 
-        @run_once
+        
         if st.button('Individual Details of Well',on_click=None):
             df['Date of collection'] = pd.to_datetime(df['Date of collection']).dt.strftime('%Y-%m-%d %H:%M:%S')
             # Set up Plotly figure
@@ -806,7 +806,7 @@ def app():
 
 
         # In[56]:
-        @run_once
+        
         if st.button('Wanna Check Accuracy oF Data',on_click=None):
             try:
                 filterwarnings('ignore')

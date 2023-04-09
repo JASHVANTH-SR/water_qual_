@@ -835,7 +835,7 @@ else:
         st.info('Awaiting for Excel file to be uploaded.')
         if st.button('Press to use Example Dataset'):
             runvoice(text="Press to use Example Dataset")
-            @st.cache(allow_output_mutation=True,suppress_st_warning=True)
+            @st.cache_data(allow_output_mutation=True,suppress_st_warning=True)
             def load_excel(selected_option):
                 if selected_option == 'Chengalpattu':
                     return pd.read_excel("cgl.xlsx", engine="openpyxl")

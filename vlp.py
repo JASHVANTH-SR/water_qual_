@@ -145,7 +145,7 @@ new_file = st.file_uploader("Choose an Excel file", type="xlsx")
 st.write('''[Example Excel(.xlsx) input file](https://docs.google.com/spreadsheets/d/1_u6TGnnj0Xs-Lkwde2H5MJ4i1o7Trixi/edit?usp=sharing&ouid=114232663325308153395&rtpof=true&sd=true)''')
 if new_file is not None:
     st.session_state.data = pd.read_excel(new_file, engine="openpyxl")    
-    @st.cache_data(allow_output_mutation=True,suppress_st_warning=True)    
+    @st.cache_resources(allow_output_mutation=True,suppress_st_warning=True)    
     
     def load_excel():
         if "data" in st.session_state:
@@ -835,7 +835,7 @@ else:
         st.info('Awaiting for Excel file to be uploaded.')
         if st.button('Press to use Example Dataset'):
             runvoice(text="Press to use Example Dataset")
-            @st.cache_data(allow_output_mutation=True,suppress_st_warning=True)
+            @st.cache_resources(allow_output_mutation=True,suppress_st_warning=True)
             def load_excel(selected_option):
                 if selected_option == 'Chengalpattu':
                     return pd.read_excel("cgl.xlsx", engine="openpyxl")

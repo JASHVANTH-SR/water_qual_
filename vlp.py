@@ -146,7 +146,7 @@ st.write('''[Example Excel(.xlsx) input file](https://docs.google.com/spreadshee
 if new_file is not None:
     st.session_state.data = pd.read_excel(new_file, engine="openpyxl")    
     @st.cache(allow_output_mutation=True,suppress_st_warning=True)    
-    @st.experimental_singleton
+    
     def load_excel():
         if "data" in st.session_state:
             return st.session_state.data

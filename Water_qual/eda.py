@@ -195,7 +195,7 @@ def app():
         st.markdown("#### Best Algorithm for Supervised Machine Learning for our Data ")
         runvoice("Best Algorithm for Supervised Machine Learning for our Data")
 
-        finalResults
+        st.write(finalResults)
 
 
 st.markdown('''### This is the **Study App** created in Streamlit using the **pandas-profiling** library.

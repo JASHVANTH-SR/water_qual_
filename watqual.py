@@ -1,5 +1,5 @@
 import streamlit as st
-from multiapp_1 import MultiApp
+from multiapp import MultiApp
 from Water_qual import sample,sample2,qual_calc,eda,vlp1 # import your app modules here
 from Water_qual import *
 from sklearn.preprocessing import StandardScaler,MinMaxScaler

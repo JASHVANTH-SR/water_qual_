@@ -19,12 +19,6 @@ from sklearn.ensemble import VotingClassifier
 from sklearn.metrics import precision_score,accuracy_score
 from sklearn.model_selection import RandomizedSearchCV,GridSearchCV,RepeatedStratifiedKFold
 
-import os
-
-try:
-  os.makedir('temp')
-except:
-  pass
 app1 = MultiApp()
 
 # Add all your application here

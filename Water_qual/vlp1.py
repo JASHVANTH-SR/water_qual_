@@ -20,6 +20,10 @@ import plotly.offline as pyo
 import plotly.express as px
 import plotly.graph_objs as go
 import plotly.figure_factory as ff
+try:
+    os.mkdir("temp")
+except:
+    pass
 
 def app():
 	input_language="en"

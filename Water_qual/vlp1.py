@@ -76,7 +76,7 @@ def app():
 
 	with st.sidebar.header('1. Upload your Excel data'):
 	    runvoice("Upload your Excel data")
-	    uploaded_file = st.sidebar.file_uploader("Upload your input Excel file", type=["xlsx"])
+	    new_file = st.sidebar.file_uploader("Upload your input Excel file", type=["xlsx"])
 
 	st.write('''[Example Excel(.xlsx) input file](https://docs.google.com/spreadsheets/d/1_u6TGnnj0Xs-Lkwde2H5MJ4i1o7Trixi/edit?usp=sharing&ouid=114232663325308153395&rtpof=true&sd=true)''')
 	if new_file is not None:

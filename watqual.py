@@ -22,7 +22,6 @@ from sklearn.model_selection import RandomizedSearchCV,GridSearchCV,RepeatedStra
 from reportlab.lib.pagesizes import landscape, letter
 from reportlab.pdfgen.canvas import Canvas
 from PIL import ImageGrab
-st.set_page_config(layout="wide")
 
 def save_as_pdf(app):
     # Capture screenshot of the entire page
@@ -30,7 +29,7 @@ def save_as_pdf(app):
     c.save()
     print(f'Streamlit app output saved as PDF: streamlit_app_output.pdf')
 
-st.set_page_config(page_title="Water Quality", page_icon="🌾", layout="centered", initial_sidebar_state="auto", menu_items=None)
+st.set_page_config(page_title="Water Quality", page_icon="🌾", layout="wide", initial_sidebar_state="auto", menu_items=None)
 st.set_option('deprecation.showPyplotGlobalUse', False)
 st.title("The Water Quality Analysis App")
 image = Image.open('tree.jpg')

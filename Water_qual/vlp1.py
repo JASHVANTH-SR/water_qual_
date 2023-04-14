@@ -474,3 +474,7 @@ def app():
 	        bargap=0.3,
 	    )
 	    st.plotly_chart(fig, use_container_width=True)
+	    pdf_bytes = app().to_pdf()
+	    with open("output.pdf", "wb") as f:
+            	f.write(pdf_bytes)
+	    st.write('PDF file generated successfully!')

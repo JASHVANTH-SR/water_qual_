@@ -6,6 +6,9 @@ import nltk
 nltk.download('punkt')
 nltk.download('averaged_perceptron_tagger')
 nltk.download('maxent_ne_chunker')
+nltk.download('words')
+nltk.download('stopwords')
+
 # Function to check for keyword match in input text
 def get_session_state():
     return st.session_state
@@ -55,3 +58,4 @@ def app():
 # Function to create or retrieve the SessionStateMixin object
 
 # Load the CSV data
+

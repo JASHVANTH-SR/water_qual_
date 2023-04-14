@@ -102,12 +102,58 @@ def app():
     
 
         
-        
+        X = df[["TDS","NO2+NO3","Ca","Mg","Na","K","Cl","SO4","CO3","HCO3","F","pH_GEN","EC_GEN","HAR_Total","SAR","RSC","Na%","potability"]].drop('potability',axis=1).values
+        y = df[["TDS","NO2+NO3","Ca","Mg","Na","K","Cl","SO4","CO3","HCO3","F","pH_GEN","EC_GEN","HAR_Total","SAR","RSC","Na%","potability"]]['potability'].values
 
-st.markdown('''### This is the **Study App** created in Streamlit using the **pandas-profiling** library.
-****Credit:**** App built in `Python` + `Streamlit` by [JASHVANTH S R ](https://www.linkedin.com/in/jashvanth-s-r-476646213)[HARUL GANESH S B ](https://www.linkedin.com/in/harul-ganesh/)[BALAJI S ](https://www.linkedin.com/in/balaji-s-csbs-dept-03790a202/)[GOWTHAM H](https://www.linkedin.com/in/gowtham-haribabu-9425861bb/)
----
-''')
+
+        # In[48]:
+
+
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=101)
+
+
+        # In[53]:
+
+
+        scaler = StandardScaler()
+        scaler.fit(X_train)
+        X_train = scaler.transform(X_train)
+        X_test = scaler.transform(X_test)
+
+
+        # In[56]:
+
+
+        try:
+            filterwarnings('ignore')
+            models =[("LR", LogisticRegression(max_iter=1000)),("SVC", SVC()),('KNN',KNeighborsClassifier(n_neighbors=10)),
+                     ("DTC", DecisionTreeClassifier()),("GNB", GaussianNB()),
+                    ("SGDC", SGDClassifier()),("Perc", Perceptron()),("NC",NearestCentroid()),
+                    ("Ridge", RidgeClassifier()),("NuSVC", NuSVC()),("BNB", BernoulliNB()),
+                     ('RF',RandomForestClassifier()),('ADA',AdaBoostClassifier()),
+                    ('XGB',GradientBoostingClassifier()),('PAC',PassiveAggressiveClassifier())]
+
+            results = []
+            names = []
+            finalResults = []
+
+            for name,model in models:
+                model.fit(X_train, y_train)
+                model_results = model.predict(X_test)
+                score = precision_score(y_test, model_results,average='macro')
+                results.append(score)
+                names.append(name)
+                finalResults.append((name,score))
+
+            finalResults.sort(key=lambda k:k[1],reverse=True)
+        except ValueError:
+            print(' ')
+
+
+        # In[57]:
+
+        st.markdown("#### Best Algorithm for Supervised Machine Learning for our Data ")
+    finalResults
 
 # In[ ]:
 

@@ -85,16 +85,16 @@ def app():
         # In[47]:
 
 
-        st.Markdown('Data Types Present in Given Dataset')
+        st.markdown('Data Types Present in Given Dataset')
         st.write(df.dtypes)
         
         
         # Display the summary statistics of each attribute
-        st.Markdown('Data Description and Statistical Details in Given Dataset')        
+        st.markdown('Data Description and Statistical Details in Given Dataset')        
         st.write(df.describe())
         
         # Check for missing values
-        st.Markdown('Checks Presence of Null Data in Given Dataset')                
+        st.markdown('Checks Presence of Null Data in Given Dataset')                
         st.write(df.isnull().sum())
         
 

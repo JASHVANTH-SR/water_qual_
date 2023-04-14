@@ -99,7 +99,7 @@ def app():
         
         for col in df.columns:
             plt.figure()
-            df.boxplot([col])
+            df.plot([col])
             plt.title(col)
             plt.show()
 

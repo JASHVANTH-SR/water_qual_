@@ -24,14 +24,9 @@ from reportlab.pdfgen.canvas import Canvas
 from PIL import ImageGrab
 def save_as_pdf(app):
     # Capture screenshot of the entire page
-    screenshot = ImageGrab.grab()
-    screenshot = screenshot.transpose(method=Image.Transpose.ROTATE_270)
-
-    # Save screenshot as PDF
-    pdf_path = 'streamlit_app_output.pdf' # Path to save the PDF
-    screenshot.save(pdf_path)
-
-    print(f'Streamlit app output saved as PDF: {pdf_path}')
+    c = Canvas('streamlit_app_output.pdf', pagesize=landscape(letter))
+    c.save()
+    print(f'Streamlit app output saved as PDF: streamlit_app_output.pdf')
 
 st.set_page_config(page_title="Water Quality", page_icon="🌾", layout="centered", initial_sidebar_state="auto", menu_items=None)
 st.set_option('deprecation.showPyplotGlobalUse', False)

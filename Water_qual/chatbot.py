@@ -57,8 +57,8 @@ def app():
 
     st.text_area("Conversation:", value="\n".join(conversations), height=300)
 
-# Function to create or retrieve the SessionStateMixin object
+    # Function to create or retrieve the SessionStateMixin object
 
-# Load the CSV data
+    # Load the CSV data
     data = pd.read_csv('chatbot_data.csv')
 

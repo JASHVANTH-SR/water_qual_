@@ -109,9 +109,6 @@ def app():
 	    st.markdown("### Nitrite and Nitrate")
 	    st.markdown("Nitrates and nitrites are compounds that occur naturally in the human body and some foods, such as vegetables. Manufacturers also add them to processed foods, such as bacon, to preserve them and make them last longer.\
 	        some forms, nitrates and nitrites can be hazardous. However, they may also have health benefits.")
-	    runvoice("Nitrates and nitrites are compounds that occur naturally in the human body and some foods, such as vegetables. Manufacturers also add them to processed foods, such as bacon, to preserve them and make them last longer.\
-	    In some forms, nitrates and nitrites can be hazardous. However, they may also have health benefits.")
-	    time.sleep(2)    
 	    fig = px.histogram(df,x='NO2+NO3',y=df['NO2+NO3'],color='potability',template='plotly_white',
 	                      marginal='box',opacity=0.7,nbins=100,color_discrete_sequence=[colors_green[3],colors_blue[3]],
 	                      barmode='group',histfunc='count')

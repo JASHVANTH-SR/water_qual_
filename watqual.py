@@ -22,7 +22,7 @@ from sklearn.model_selection import RandomizedSearchCV,GridSearchCV,RepeatedStra
 
 st.set_page_config(page_title="Water Quality", page_icon="🌾", layout="centered", initial_sidebar_state="auto", menu_items=None)
 st.set_option('deprecation.showPyplotGlobalUse', False)
-st.title(""The Water Quality Analysis App"")
+st.title("The Water Quality Analysis App")
 image = Image.open('tree.jpg')
 st.image(image)
 image = Image.open('tvalluvar.jpeg')

@@ -44,6 +44,8 @@ app1.add_app("Exploratory Data Analysis(Built in Dataset)", eda2.app)
 app1.add_app("Querybot",chatbot.app)
 
 app1.run()
+pdfkit.from_string(app1, 'output.pdf')
+print('PDF file generated successfully!')
 if st.button('show app credit'):
   st.markdown('''### This is the **Study App** created in Streamlit using the **pandas-profiling** library.
 ****Credit:**** App built in `Python` + `Streamlit` by [JASHVANTH S R ](https://www.linkedin.com/in/jashvanth-s-r-476646213)[HARUL GANESH S B ](https://www.linkedin.com/in/harul-ganesh/)[BALAJI S ](https://www.linkedin.com/in/balaji-s-csbs-dept-03790a202/)[GOWTHAM H](https://www.linkedin.com/in/gowtham-haribabu-9425861bb/)

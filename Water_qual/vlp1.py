@@ -66,7 +66,7 @@ def app():
 
 	    st.plotly_chart(fig)
 	    if st.button('print report'):
-		doc = SimpleDocTemplate("output.pdf", pagesize=letter)
+	    	doc = SimpleDocTemplate("output.pdf", pagesize=letter)
 		elements = []
 
 			# Add title and paragraphs to the PDF

@@ -1,5 +1,6 @@
 import streamlit as st
 from PIL import Image
+import pdfkit
 from multiapp import MultiApp
 from Water_qual import sample,sample2,qual_calc,eda,eda2,vlp1,vlp2,chatbot # import your app modules here
 from Water_qual import *

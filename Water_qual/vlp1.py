@@ -66,36 +66,36 @@ def app():
 
 	    st.plotly_chart(fig)
 	    if st.button('print report'):
-			doc = SimpleDocTemplate("output.pdf", pagesize=letter)
-			elements = []
+		doc = SimpleDocTemplate("output.pdf", pagesize=letter)
+		elements = []
 
 			# Add title and paragraphs to the PDF
-			styles = getSampleStyleSheet()
-			title = Paragraph("<b>Potability</b>", styles['Title'])
-			elements.append(title)
-			elements.append(Spacer(1, 20))
+		styles = getSampleStyleSheet()
+		title = Paragraph("<b>Potability</b>", styles['Title'])
+		elements.append(title)
+		elements.append(Spacer(1, 20))
 
-			paragraph1 = Paragraph("It defines about a liquid that is suitable for drinking or not. Parameters for drinking water quality typically fall within three categories: physical, chemical, microbiological.", styles['BodyText'])
-			elements.append(paragraph1)
-			paragraph2 = Paragraph("Physical and chemical parameters include heavy metals, trace organic compounds, total suspended solids, and turbidity. Chemical parameters tend to pose more of a chronic health risk through buildup of heavy metals although some components like nitrates/nitrites and arsenic can have a more immediate impact. Physical parameters affect the aesthetics and taste of the drinking water and may complicate the removal of microbial pathogens.", styles['BodyText'])
-			elements.append(paragraph2)
-			paragraph3 = Paragraph("We can resample the data to get a balanced dataset", styles['BodyText'])
-			elements.append(paragraph3)
+		paragraph1 = Paragraph("It defines about a liquid that is suitable for drinking or not. Parameters for drinking water quality typically fall within three categories: physical, chemical, microbiological.", styles['BodyText'])
+		elements.append(paragraph1)
+		paragraph2 = Paragraph("Physical and chemical parameters include heavy metals, trace organic compounds, total suspended solids, and turbidity. Chemical parameters tend to pose more of a chronic health risk through buildup of heavy metals although some components like nitrates/nitrites and arsenic can have a more immediate impact. Physical parameters affect the aesthetics and taste of the drinking water and may complicate the removal of microbial pathogens.", styles['BodyText'])
+		elements.append(paragraph2)
+		paragraph3 = Paragraph("We can resample the data to get a balanced dataset", styles['BodyText'])
+		elements.append(paragraph3)
 
-			# Add Plotly chart image to the PDF
-			# Assuming you have saved the Plotly chart as an image file named 'chart.png'
-			elements.append(Spacer(1, 20))
-			elements.append(Paragraph("Potability", styles['BodyText']))
-			elements.append(Spacer(1, 10))
-			elements.append(Paragraph("Q. How many samples of water are Potable?", styles['BodyText']))
-			elements.append(Spacer(1, 10))
-			elements.append(Paragraph("Pie chart:", styles['BodyText']))
-			elements.append(Spacer(1, 10))
-			elements.append(Paragraph("![chart](chart.png)", styles['BodyText']))
+		# Add Plotly chart image to the PDF
+		# Assuming you have saved the Plotly chart as an image file named 'chart.png'
+		elements.append(Spacer(1, 20))
+		elements.append(Paragraph("Potability", styles['BodyText']))
+		elements.append(Spacer(1, 10))
+		elements.append(Paragraph("Q. How many samples of water are Potable?", styles['BodyText']))
+		elements.append(Spacer(1, 10))
+		elements.append(Paragraph("Pie chart:", styles['BodyText']))
+		elements.append(Spacer(1, 10))
+		elements.append(Paragraph("![chart](chart.png)", styles['BodyText']))
 
-			# Build the PDF document
-			doc.build(elements)
-			st.write('PDF file generated successfully!')
+		# Build the PDF document
+		doc.build(elements)
+		st.write('PDF file generated successfully!')
 
 
 

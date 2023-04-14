@@ -26,6 +26,9 @@ def perform_nlp(input_text):
     return tokens, pos_tags, entities
 
 # Streamlit app
+def get_session_state():
+    return st.session_state
+
 def app():
     st.title("Chatbot")
 
@@ -54,8 +57,6 @@ def app():
     st.text_area("Conversation:", value="\n".join(conversations), height=300)
 
 # Function to create or retrieve the SessionStateMixin object
-    def get_session_state():
-        return st.session_state
 
 # Load the CSV data
     data = pd.read_csv('chatbot_data.csv')

@@ -6,7 +6,6 @@ import spacy
 data = pd.read_csv('chatbot_data.csv')
 
 # Load the Spacy NLP model
-nlp = spacy.load('en_core_web_sm')
 
 # Function to check for keyword match in input text
 def check_keywords(input_text):

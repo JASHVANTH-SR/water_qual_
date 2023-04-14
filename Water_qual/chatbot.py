@@ -19,7 +19,7 @@ def check_keywords(input_text, data):
         keywords = row['keywords'].split('|')
         for keyword in keywords:
             if keyword in input_text:
-                return row['responses']
+                return row['responses'].strip('\"') # Remove quotes from response
     return None
 
 # Function to perform NLP on input text using NLTK

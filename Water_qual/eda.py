@@ -32,54 +32,6 @@ def app():
     colors_dark = ["#1F1F1F", "#313131", '#636363', '#AEAEAE', '#DADADA']
     colors_green = ['#01411C','#4B6F44','#4F7942','#74C365','#D0F0C0']
     translator = Translator()
-    input_language="en"
-    in_lang = st.selectbox(
-        "Select your output language",
-        ("English", "Tamil", "Telugu", "Hindi", "Malayalam", "Kannada"),)
-    text = "Welcome To Water Quality Analysis Software"
-    if in_lang == "English":
-        output_language = "en"
-    elif in_lang == "Tamil":
-        output_language = "ta"
-    elif in_lang == "Telugu":
-        output_language = "te"
-    elif in_lang == "Hindi":
-        output_language = "hi"
-    elif in_lang == "Malayalam":
-        output_language = "ml"
-    elif in_lang == "Kannada":
-        output_language = "kn"
-
-    def text_to_speech(input_language, output_language, text):
-        translation = translator.translate(text, src=input_language, dest=output_language)
-        trans_text = translation.text
-        tts = gTTS(trans_text, lang=output_language, slow=False)
-        try:
-            my_file_name = text[0:20]
-        except:
-            my_file_name = "audio"
-        tts.save(f"temp/{my_file_name}.mp3")
-        return my_file_name, trans_text
-    def remove_files(n):
-        mp3_files = glob.glob("temp/*mp3")
-        if len(mp3_files) != 0:
-            now = time.time()
-            n_days = n * 86400
-            for f in mp3_files:
-                if os.stat(f).st_mtime < now - n_days:
-                    os.remove(f)
-                    print("Deleted ", f)
-
-    def runvoice(text):
-        try:
-            result, output_text = text_to_speech(input_language, output_language, text)
-            audio_file = open(f"temp/{result}.mp3", "rb+")
-            audio_bytes = audio_file.read()
-            time.sleep(2)
-            st.audio(audio_bytes, format="audio/mp3",start_time=0)
-            st.write(f" {output_text}")
-        except Exception as e:
-            print()
 
     new_file = st.file_uploader("Choose an Excel file", type="xlsx")
     st.write('''[Example Excel(.xlsx) input file](https://docs.google.com/spreadsheets/d/1_u6TGnnj0Xs-Lkwde2H5MJ4i1o7Trixi/edit?usp=sharing&ouid=114232663325308153395&rtpof=true&sd=true)''')

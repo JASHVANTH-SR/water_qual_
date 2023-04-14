@@ -48,9 +48,6 @@ def app():
         else:
             conversations.append("Bot: Sorry, I couldn't understand your query.")
             tokens, pos_tags, entities = perform_nlp(user_input)
-            st.write("Tokens: ", tokens)
-            st.write("POS Tags: ", pos_tags)
-            st.write("Entities: ", entities)
 
     st.text_area("Conversation:", value="\n".join(conversations), height=300)
 

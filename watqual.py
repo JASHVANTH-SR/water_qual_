@@ -1,6 +1,6 @@
 import streamlit as st
 from multiapp import MultiApp
-from Water_qual import sample,sample2,qual_calc,eda,vlp1,chatbot # import your app modules here
+from Water_qual import sample,sample2,qual_calc,eda,eda1,vlp1,chatbot # import your app modules here
 from Water_qual import *
 from sklearn.preprocessing import StandardScaler,MinMaxScaler
 from sklearn.model_selection import train_test_split

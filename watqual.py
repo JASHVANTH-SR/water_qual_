@@ -1,6 +1,6 @@
 import streamlit as st
 from multiapp import MultiApp
-from Water_qual import sample,sample2,qual_calc,eda,eda2,vlp1,chatbot # import your app modules here
+from Water_qual import sample,sample2,qual_calc,eda,eda2,vlp1,vlp2,chatbot # import your app modules here
 from Water_qual import *
 from sklearn.preprocessing import StandardScaler,MinMaxScaler
 from sklearn.model_selection import train_test_split
@@ -25,6 +25,7 @@ app1 = MultiApp()
 app1.add_app("Individual Interpreter(Manual Upload)", sample.app)
 app1.add_app("Individual Interpreter(Built in Dataset)", sample2.app)
 app1.add_app("Summary Overall(Manual Upload)", vlp1.app)
+app1.add_app("Summary Overall(Built in Dataset)", vlp2.app)
 app1.add_app("Water Quality calculator", qual_calc.app)
 app1.add_app("Exploratory Data Analysis(Manual Upload)", eda.app)
 app1.add_app("Exploratory Data Analysis(Built in Dataset)", eda2.app)

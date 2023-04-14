@@ -67,7 +67,7 @@ def app():
 	    st.plotly_chart(fig)
 	    if st.button('print report'):
 	    	doc = SimpleDocTemplate("output.pdf", pagesize=letter)
-		elements = []
+	    	elements = []
 
 			# Add title and paragraphs to the PDF
             	styles = getSampleStyleSheet()

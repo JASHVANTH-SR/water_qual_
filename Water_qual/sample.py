@@ -104,3 +104,4 @@ def app():
         st.write(f"Potability of Well No {well_no} for {param}:")
         for date, potability in filtered_df[["Date of collection", "potability"]].itertuples(index=False):
             st.write(f"- Date: {date}, Potability: {potability}")
+            runvoice(f"- Date: {date}, Potability: {potability}")

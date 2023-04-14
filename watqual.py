@@ -22,7 +22,7 @@ from sklearn.model_selection import RandomizedSearchCV,GridSearchCV,RepeatedStra
 from reportlab.lib.pagesizes import landscape, letter
 from reportlab.pdfgen.canvas import Canvas
 from PIL import ImageGrab
-st.set_page_config(allow_wide_layout=True)
+st.set_page_config(layout="wide")
 
 def save_as_pdf(app):
     # Capture screenshot of the entire page

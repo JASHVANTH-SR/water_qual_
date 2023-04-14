@@ -9,7 +9,9 @@ nltk.download('maxent_ne_chunker')
 nltk.download('words')
 
 # Function to check for keyword match in input text
-def check_keywords(input_text, data):
+
+def app():
+    def check_keywords(input_text, data):
     input_text = input_text.lower()
     for index, row in data.iterrows():
         keywords = row['keywords'].split('|')
@@ -18,18 +20,17 @@ def check_keywords(input_text, data):
                 return row['responses']
     return None
 
-# Function to perform NLP on input text using NLTK
-def perform_nlp(input_text):
-    tokens = nltk.word_tokenize(input_text)
-    pos_tags = nltk.pos_tag(tokens)
-    entities = nltk.ne_chunk(pos_tags)
-    return tokens, pos_tags, entities
+    # Function to perform NLP on input text using NLTK
+    def perform_nlp(input_text):
+        tokens = nltk.word_tokenize(input_text)
+        pos_tags = nltk.pos_tag(tokens)
+        entities = nltk.ne_chunk(pos_tags)
+        return tokens, pos_tags, entities
 
-# Streamlit app
-def get_session_state():
-    return st.session_state
+    # Streamlit app
+    def get_session_state():
+        return st.session_state
 
-def app():
     st.title("Chatbot")
 
     # Create or get the SessionStateMixin object

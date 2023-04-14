@@ -48,7 +48,6 @@ def app():
 
         st.markdown("### Correlation between Variables used here")
         st.markdown("In statistics, correlation or dependence is any statistical relationship, whether causal or not, between two random variables or bivariate data.")
-        runvoice("In statistics, correlation or dependence is any statistical relationship, whether causal or not, between two random variables or bivariate data.")
         time.sleep(2)
         fig = px.imshow(cor,height=800,width=800,color_continuous_scale=colors_blue,template='plotly_white')
 

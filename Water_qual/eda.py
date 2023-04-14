@@ -153,7 +153,7 @@ def app():
         # In[57]:
 
         st.markdown("#### Best Algorithm for Supervised Machine Learning for our Data ")
-    finalResults
+        finalResults
 
 # In[ ]:
 

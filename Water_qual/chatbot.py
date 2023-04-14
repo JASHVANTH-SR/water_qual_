@@ -10,8 +10,7 @@ nltk.download('words')
 nltk.download('stopwords')
 
 # Function to check for keyword match in input text
-def get_session_state():
-    return st.session_state
+    
 
 def check_keywords(input_text, data):
     input_text = input_text.lower()
@@ -34,7 +33,7 @@ def app():
     st.title("Chatbot")
 
     # Create or get the SessionStateMixin object
-    session_state = get_session_state()
+    session_state = st.session_state
 
     # Create or retrieve the conversation list from the SessionStateMixin
     data = pd.read_csv('chatbot_data.csv')

@@ -4,62 +4,9 @@ import plotly.express as px
 from datetime import datetime
 import time
 import glob
-from gtts import gTTS
-from googletrans import Translator
 
 # Load data
 def app():
-    translator = Translator()
-
-    input_language="en"
-    in_lang = st.selectbox(
-        "Select your output language",
-        ("English", "Tamil", "Telugu", "Hindi", "Malayalam", "Kannada"),)
-    text = "Welcome To Water Quality Analysis Software"
-    if in_lang == "English":
-        output_language = "en"
-    elif in_lang == "Tamil":
-        output_language = "ta"
-    elif in_lang == "Telugu":
-        output_language = "te"
-    elif in_lang == "Hindi":
-        output_language = "hi"
-    elif in_lang == "Malayalam":
-        output_language = "ml"
-    elif in_lang == "Kannada":
-        output_language = "kn"
-
-    def text_to_speech(input_language, output_language, text):
-        translation = translator.translate(text, src=input_language, dest=output_language)
-        trans_text = translation.text
-        tts = gTTS(trans_text, lang=output_language, slow=False)
-        try:
-            my_file_name = text[0:20]
-        except:
-            my_file_name = "audio"
-        tts.save(f"temp/{my_file_name}.mp3")
-        return my_file_name, trans_text
-    def remove_files(n):
-        mp3_files = glob.glob("temp/*mp3")
-        if len(mp3_files) != 0:
-            now = time.time()
-            n_days = n * 86400
-            for f in mp3_files:
-                if os.stat(f).st_mtime < now - n_days:
-                    os.remove(f)
-                    print("Deleted ", f)
-
-    def runvoice(text):
-        try:
-            result, output_text = text_to_speech(input_language, output_language, text)
-            audio_file = open(f"temp/{result}.mp3", "rb+")
-            audio_bytes = audio_file.read()
-            time.sleep(2)
-            st.audio(audio_bytes, format="audio/mp3",start_time=0)
-            st.write(f" {output_text}")
-        except Exception as e:
-            print()
-
     @st.cache(allow_output_mutation=True,suppress_st_warning=True)
     def load_excel(selected_option):
         if selected_option == 'Chengalpattu':

@@ -3,8 +3,6 @@ import streamlit as st
 import os
 import time
 import glob
-from gtts import gTTS
-from googletrans import Translator
 
 
 import numpy as np
@@ -47,7 +45,6 @@ def app():
 	    st.markdown("### Potability")
 	    st.markdown("It defines about a liquid that is suitable for drinking or not. Parameters for drinking water quality typically fall within three categories: physical, chemical, microbiological.")
 	    st.markdown("Physical and chemical parameters include heavy metals, trace organic compounds, total suspended solids, and turbidity. Chemical parameters tend to pose more of a chronic health risk through buildup of heavy metals although some components like nitrates/nitrites and arsenic can have a more immediate impact. Physical parameters affect the aesthetics and taste of the drinking water and may complicate the removal of microbial pathogens.")
-	    time.sleep(2)
 	    d= pd.DataFrame(df['potability'].value_counts())
 	    fig = px.pie(d,values='potability',names=['Not Potable','Potable'],hole=0.4,opacity=0.6,
 	                color_discrete_sequence=[colors_green[3],colors_blue[3]],
@@ -76,7 +73,6 @@ def app():
 	    st.markdown("Total dissolved solids (TDS) is a measure of the dissolved combined content of all inorganic and organic substances present in a liquid in molecular,\
 	     ionized, or micro-granular (colloidal sol) suspended form.\
 	     TDS concentrations are often reported in parts per million (ppm). Water TDS concentrations can be determined using a digital meter.")
-	    time.sleep(2)
 	    fig = px.histogram(df,x='TDS',y=df['TDS'],color='potability',template='plotly_white',
 	                      marginal='box',opacity=0.7,nbins=100,color_discrete_sequence=[colors_green[3],colors_blue[3]],
 	                      barmode='group',histfunc='count')
@@ -134,7 +130,6 @@ def app():
 	    st.markdown("### Calcium")
 	    st.markdown("Calcium is a chemical element with the symbol Ca and atomic number 20. As an alkaline earth metal, calcium is a reactive metal that forms a dark oxide-nitride layer when exposed to air.\
 	     Calcium is a mineral your body needs to build and maintain strong bones and to carry out many important functions. Calcium is the most abundant mineral in the body. Almost all calcium in the body is stored in bones and teeth, giving them structure and hardness.")
-	    time.sleep(2)    
 	    fig = px.histogram(df,x='Ca',y=df['Ca'],color='potability',template='plotly_white',
 	                      marginal='box',opacity=0.7,nbins=100,color_discrete_sequence=[colors_green[3],colors_blue[3]],
 	                      barmode='group',histfunc='count')
@@ -156,7 +151,6 @@ def app():
 	    st.markdown("### Magnesium")
 	    st.markdown("Magnesium is a chemical element with the symbol Mg and atomic number 12. It is a shiny gray metal having a low density, low melting point and high chemical reactivity.\
 	        Magnesium is a cofactor in more than 300 enzyme systems that regulate diverse biochemical reactions in the body, including protein synthesis, muscle and nerve function, blood glucose control, and blood pressure regulation [1-3]. Magnesium is required for energy production, oxidative phosphorylation, and glycolysis.")
-	    time.sleep(2)    
 	    fig = px.histogram(df,x='Mg',y=df['Mg'],color='potability',template='plotly_white',
 	                      marginal='box',opacity=0.7,nbins=100,color_discrete_sequence=[colors_green[3],colors_blue[3]],
 	                      barmode='group',histfunc='count')
@@ -182,7 +176,6 @@ def app():
 	    st.markdown("### Sodium")
 	    st.markdown("Sodium is a chemical element with the symbol Na and atomic number 11. It is a soft, silvery-white, highly reactive metal. Sodium is an alkali metal, being in group 1 of the periodic table. Its only stable isotope is ²³Na. \
 	        It helps with the function of nerves and muscles. It also helps to keep the right balance of fluids in your body. Your kidneys control how much sodium is in your body. If you have too much and your kidneys can't get rid it, sodium builds up in your blood. This can lead to high blood pressure.")
-	    time.sleep(2)    
 	    fig = px.histogram(df,x='Na',y=df['Na'],color='potability',template='plotly_white',
 	                      marginal='box',opacity=0.7,nbins=100,color_discrete_sequence=[colors_green[3],colors_blue[3]],
 	                      barmode='group',histfunc='count')
@@ -204,7 +197,6 @@ def app():
 	    st.markdown("### Potassium")
 	    st.markdown("Potassium is the chemical element with the symbol K and atomic number 19. It is a silvery white metal that is soft enough to easily cut with a knife.\
 	        Potassium is an essential mineral that is needed by all tissues in the body. It is sometimes referred to as an electrolyte because it carries a small electrical charge that activates various cell and nerve functions. Potassium is found naturally in many foods and as a supplement.")
-	    time.sleep(2)    
 	    fig = px.histogram(df,x='K',y=df['K'],color='potability',template='plotly_white',
 	                      marginal='box',opacity=0.7,nbins=100,color_discrete_sequence=[colors_green[3],colors_blue[3]],
 	                      barmode='group',histfunc='count')
@@ -225,7 +217,6 @@ def app():
 	    st.markdown("### Chlorine")
 	    st.markdown("Chlorine is a chemical element with the symbol Cl and atomic number 17. The second-lightest of the halogens, it appears between fluorine and bromine in the periodic table and its properties are mostly intermediate between them.\
 	        Chlorine has a pungent, irritating odor similar to bleach that is detectable at low concentrations. The density of chlorine gas is approximately 2.5 times greater than air, which will cause it to initially remain near the ground in areas with little air movement.")
-	    time.sleep(2)    
 	    fig = px.histogram(df,x='Cl',y=df['Cl'],color='potability',template='plotly_white',
 	                      marginal='box',opacity=0.7,nbins=100,color_discrete_sequence=[colors_green[3],colors_blue[3]],
 	                      barmode='group',histfunc='count')

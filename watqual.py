@@ -1,6 +1,5 @@
 import streamlit as st
 from PIL import Image
-import pdfkit
 from multiapp import MultiApp
 from Water_qual import sample,sample2,qual_calc,eda,eda2,vlp1,vlp2,chatbot # import your app modules here
 from Water_qual import *
@@ -20,6 +19,19 @@ from sklearn.ensemble import VotingClassifier
 # Evaluation & CV Libraries
 from sklearn.metrics import precision_score,accuracy_score
 from sklearn.model_selection import RandomizedSearchCV,GridSearchCV,RepeatedStratifiedKFold
+from reportlab.lib.pagesizes import landscape, letter
+from reportlab.pdfgen.canvas import Canvas
+from PIL import ImageGrab
+def save_as_pdf(app):
+    # Capture screenshot of the entire page
+    screenshot = ImageGrab.grab()
+    screenshot = screenshot.transpose(method=Image.Transpose.ROTATE_270)
+
+    # Save screenshot as PDF
+    pdf_path = 'streamlit_app_output.pdf' # Path to save the PDF
+    screenshot.save(pdf_path)
+
+    print(f'Streamlit app output saved as PDF: {pdf_path}')
 
 st.set_page_config(page_title="Water Quality", page_icon="🌾", layout="centered", initial_sidebar_state="auto", menu_items=None)
 st.set_option('deprecation.showPyplotGlobalUse', False)
@@ -45,8 +57,8 @@ app1.add_app("Exploratory Data Analysis(Built in Dataset)", eda2.app)
 app1.add_app("Querybot",chatbot.app)
 
 app1.run()
-pdfkit.from_string(app1, 'output.pdf')
-print('PDF file generated successfully!')
+if st.button('Save as PDF'):
+        save_as_pdf(app1)
 if st.button('show app credit'):
   st.markdown('''### This is the **Study App** created in Streamlit using the **pandas-profiling** library.
 ****Credit:**** App built in `Python` + `Streamlit` by [JASHVANTH S R ](https://www.linkedin.com/in/jashvanth-s-r-476646213)[HARUL GANESH S B ](https://www.linkedin.com/in/harul-ganesh/)[BALAJI S ](https://www.linkedin.com/in/balaji-s-csbs-dept-03790a202/)[GOWTHAM H](https://www.linkedin.com/in/gowtham-haribabu-9425861bb/)

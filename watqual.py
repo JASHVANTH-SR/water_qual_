@@ -27,5 +27,6 @@ app1.add_app("Individual Interpreter(Built in Dataset)", sample2.app)
 app1.add_app("Summary Overall(Manual Upload)", vlp1.app)
 app1.add_app("Water Quality calculator", qual_calc.app)
 app1.add_app("Exploratory Data Analysis", eda.app)
+app1.add_app("Querybot",chatbot.py)
 
 app1.run()

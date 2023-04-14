@@ -15,3 +15,30 @@ hardness|water hardness|calcium carbonate,"Water hardness is the concentration o
 turbidity|water turbidity|cloudiness,"Water turbidity is the measure of cloudiness or haziness in water caused by suspended particles.It is typically measured using a turbidity meter which calculates the amount of light scattered by the particles in the water."
 
 chlorine|chlorine level|disinfection,"Chlorine is often added to water as a disinfectant to kill harmful microorganisms.The chlorine level in water is usually measured in parts per million (ppm) or milligrams per liter (mg/L) to ensure that it is within the safe range for human consumption."
+
+pH_GEN|General pH,"General pH refers to the measurement of acidity or alkalinity of water on a scale from 0 to 14. A pH value of 7 is considered neutral, while pH values below 6.5 or above 8.5 are considered outside the acceptable limit for drinking water."
+
+TDS|Total Dissolved Solids,"Total Dissolved Solids (TDS) is a measure of the concentration of dissolved substances in water. It includes minerals, salts, and other organic and inorganic substances. High TDS levels (limit: < 500 mg/L) can affect the taste, odor, and quality of water."
+
+NO2_NO3|Nitrite + Nitrate,"Nitrite (NO2) and Nitrate (NO3) are forms of nitrogen compounds that can be found in water. They are typically measured together as Nitrite + Nitrate (NO2+NO3) and are used as an indicator of water quality and potential contamination from agricultural runoff, sewage, or other sources. The acceptable limit for drinking water is < 10 mg/L for NO2 and < 50 mg/L for NO3."
+
+Cl|Chloride,"Chloride (Cl) is a common salt found in water. It is important to monitor chloride levels in water as high levels (limit: < 250 mg/L) can affect taste, odor, and corrosion of plumbing fixtures."
+SO4|Sulfate,"Sulfate (SO4) is a naturally occurring compound that can be found in water. It is important to monitor sulfate levels in water as high levels (limit: < 250 mg/L) can cause issues such as scale formation in pipes and appliances."
+
+F|Fluoride,"Fluoride (F) is a naturally occurring mineral that can be found in water. It is commonly added to drinking water to prevent tooth decay. However, excessive fluoride levels (limit: < 1.5 mg/L) can cause dental fluorosis and other health concerns."
+
+HCO3|Bicarbonate,"Bicarbonate (HCO3) is a form of alkalinity in water that is important to monitor as it can affect the pH and overall water quality. High bicarbonate levels (limit: < 100 mg/L) can result in scaling and other water quality issues."
+
+EC_GEN|General Electrical Conductivity,"General Electrical Conductivity (EC_GEN) is a measure of the ability of water to conduct electricity, which is influenced by the concentration of dissolved ions. It is commonly used as an indicator of overall water quality, with higher EC_GEN values indicating higher levels of dissolved solids. The acceptable limit for drinking water is < 1500 µS/cm."
+
+RSC|Residual Sodium Carbonate,"Residual Sodium Carbonate (RSC) is a measure of the potential for water to cause soil degradation and reduce crop yields due to the presence of excess sodium and carbonate ions. RSC is calculated using the concentrations of bicarbonate, calcium, magnesium, and sodium ions in water. High RSC values (limit: < 1.25 meq/L) indicate water that may have a negative impact on agriculture and soil quality."
+
+Mg|Magnesium,"Magnesium (Mg) is an essential mineral that can be found in water. It is important to monitor magnesium levels as it can affect water hardness, taste, and overall water quality. High magnesium levels (limit: < 50 mg/L) can result in scaling and other water quality issues."
+
+Na|Sodium,"Sodium (Na) is a common mineral found in water. It is important to monitor sodium levels, especially for individuals on a low-sodium diet or with certain health conditions. High sodium levels (limit: < 200 mg/L) in drinking water can have health implications such as hypertension and cardiovascular disease."
+
+K|Potassium,"Potassium (K) is an essential element that can be found in water. It plays a crucial role in plant growth and is important for human health. High potassium levels (limit: < 12 mg/L) in drinking water can cause a bitter taste and may have health implications for individuals with certain medical conditions."
+
+SO4|Sulfate,"Sulfate (SO4) is a common ion found in water. It is not typically harmful to human health, but high sulfate levels (limit: < 250 mg/L) in drinking water can affect the taste and odor of water. Sulfate can also contribute to scaling in plumbing systems and may have an impact on water quality for specific uses such as irrigation or livestock watering."
+
+SAR|Sodium Adsorption Ratio,"Sodium Adsorption Ratio (SAR) is a measure of the potential of water to cause soil dispersion and reduce soil permeability. SAR is calculated using the concentrations of sodium, calcium, and magnesium ions in water. High SAR values (limit: < 26) can indicate water that may have negative effects on soil structure and agricultural productivity. Monitoring SAR levels is important for managing irrigation water quality and maintaining healthy soil conditions."

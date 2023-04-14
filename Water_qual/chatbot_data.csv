@@ -1,0 +1,17 @@
+keywords,responses
+greeting|hello|hi,Hello! How can I help you today?
+
+bye|goodbye|see you later,Goodbye! Have a great day!
+
+potability|potable|non potable|water quality|water safety,"Water potability is the measure of water quality and safety.It is calculated based on various parameters such as pH hardness 
+turbidity and chlorine levels in the water."
+
+parameter|parameter value|water parameter,"Water parameters include pH hardness turbidity chlorine etc.These parameters are measured using specific methods and instruments to determine the quality of water."
+
+pH|pH value|water pH,"The pH of water is a measure of its acidity or alkalinity.It is calculated on a scale from 0 to 14 with a pH of 7 being considered neutral. Water with a pH below 7 is acidic while water with a pH above 7 is alkaline.""
+
+hardness|water hardness|calcium carbonate,"Water hardness is the concentration of calcium carbonate in water.It is calculated based on the levels of calcium and magnesium ions in the water usually expressed in milligrams per liter (mg/L) or parts per million (ppm)."
+
+turbidity|water turbidity|cloudiness,"Water turbidity is the measure of cloudiness or haziness in water caused by suspended particles.It is typically measured using a turbidity meter which calculates the amount of light scattered by the particles in the water."
+
+chlorine|chlorine level|disinfection,"Chlorine is often added to water as a disinfectant to kill harmful microorganisms.The chlorine level in water is usually measured in parts per million (ppm) or milligrams per liter (mg/L) to ensure that it is within the safe range for human consumption."

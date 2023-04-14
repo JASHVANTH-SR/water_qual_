@@ -1,9 +1,12 @@
 import streamlit as st
 import pandas as pd
-import spacy
+import nltk
 
-# Load the Spacy NLP model
-nlp = spacy.load('en_core_web_sm')
+# Download NLTK data
+nltk.download('punkt')
+nltk.download('averaged_perceptron_tagger')
+nltk.download('maxent_ne_chunker')
+nltk.download('words')
 
 # Function to check for keyword match in input text
 def check_keywords(input_text, data):
@@ -15,12 +18,11 @@ def check_keywords(input_text, data):
                 return row['responses']
     return None
 
-# Function to perform NLP on input text
+# Function to perform NLP on input text using NLTK
 def perform_nlp(input_text):
-    doc = nlp(input_text)
-    tokens = [token.text for token in doc]
-    pos_tags = [token.pos_ for token in doc]
-    entities = [(ent.text, ent.label_) for ent in doc.ents]
+    tokens = nltk.word_tokenize(input_text)
+    pos_tags = nltk.pos_tag(tokens)
+    entities = nltk.ne_chunk(pos_tags)
     return tokens, pos_tags, entities
 
 # Streamlit app
@@ -55,6 +57,6 @@ def app():
     def get_session_state():
         return st.session_state
 
-    # Load the CSV data
+# Load the CSV data
     data = pd.read_csv('chatbot_data.csv')
 

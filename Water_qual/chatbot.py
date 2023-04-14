@@ -5,7 +5,7 @@ import nltk
 # Download NLTK data
 nltk.download('punkt')
 nltk.download('averaged_perceptron_tagger')
-
+nltk.download('maxent_ne_chunker')
 # Function to check for keyword match in input text
 def get_session_state():
     return st.session_state

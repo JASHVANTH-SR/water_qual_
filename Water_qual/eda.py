@@ -86,22 +86,15 @@ def app():
 
 
         # Display the data types of each attribute
-        print(df.dtypes)
+        st.write(df.dtypes)
+        
         
         # Display the summary statistics of each attribute
-        print(df.describe())
-        
-        # Display the summary statistics of each attribute
-        print(df.describe())
+        st.write(df.describe())
         
         # Check for missing values
-        print(df.isnull().sum())
+        st.write(df.isnull().sum())
         
-        for col in df.columns:
-            plt.figure()
-            df.plot([col])
-            plt.title(col)
-            plt.show()
 
 
     

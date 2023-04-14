@@ -182,4 +182,3 @@ def app():
 
     st.markdown("#### Best Algorithm for Supervised Machine Learning for our Data ")
     st.write(finalResults)
-app()

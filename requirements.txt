@@ -10,6 +10,7 @@ seaborn==0.12.2
 plotly==5.10.0
 missingno==0.5.2
 scikit-learn==1.1.2
-spacy
+
 pdfkit
 reportlab
+nltk

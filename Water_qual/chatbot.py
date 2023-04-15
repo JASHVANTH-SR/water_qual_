@@ -61,7 +61,7 @@ def get_response(user_input):
 
 # Set up Streamlit UI
 def app():
-    st.title("ChatBot")
+    st.title("InfoBot")
     st.write("Type a message and ChatBot will respond!")
 
     # Chat input box
@@ -72,8 +72,8 @@ def app():
         responses = get_response(user_input)
         if responses:
             for response in responses:
-                st.write("ChatBot:", response)
+                st.write("InfoBot:", response)
         else:
-            st.write("ChatBot: I'm sorry, I don't understand. Can you please rephrase your question or provide more context?")
+            st.write("InfoBot: I'm sorry, I don't understand. Can you please rephrase your question or provide more context?")
 
 # Run the Streamlit app

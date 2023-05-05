@@ -4,8 +4,6 @@ import streamlit as st
 import os
 import time
 import glob
-from gtts import gTTS
-from googletrans import Translator
 from PIL import Image
 
 

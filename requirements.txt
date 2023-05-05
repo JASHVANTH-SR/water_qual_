@@ -1,6 +1,7 @@
 openpyxl==3.1.2
 streamlit==1.20.0
 pycairo
+pkg-config
 gtts==2.2.4
 googletrans==3.1.0-alpha
 Pillow==9.2.0

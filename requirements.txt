@@ -1,3 +1,5 @@
+pip==23.1.2
+
 openpyxl==3.1.2
 streamlit==1.20.0
 pycairo
@@ -15,4 +17,3 @@ scikit-learn==1.1.2
 
 
 nltk
-pip==23.1.2

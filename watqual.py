@@ -19,15 +19,8 @@ from sklearn.ensemble import VotingClassifier
 # Evaluation & CV Libraries
 from sklearn.metrics import precision_score,accuracy_score
 from sklearn.model_selection import RandomizedSearchCV,GridSearchCV,RepeatedStratifiedKFold
-from reportlab.lib.pagesizes import landscape, letter
-from reportlab.pdfgen.canvas import Canvas
 from PIL import ImageGrab
 
-def save_as_pdf(app):
-    # Capture screenshot of the entire page
-    c = Canvas('streamlit_app_output.pdf', pagesize=landscape(letter))
-    c.save()
-    print(f'Streamlit app output saved as PDF: streamlit_app_output.pdf')
 
 st.set_page_config(page_title="Water Quality", page_icon="🌾", layout="wide", initial_sidebar_state="auto", menu_items=None)
 st.set_option('deprecation.showPyplotGlobalUse', False)
@@ -53,8 +46,6 @@ app1.add_app("Exploratory Data Analysis(Built in Dataset)", eda2.app)
 app1.add_app("Querybot",chatbot.app)
 
 app1.run()
-if st.button('Save as PDF'):
-        save_as_pdf(app1)
 if st.button('show app credit'):
   st.markdown('''### This is the **Study App** created in Streamlit using the **pandas-profiling** library.
 ****Credit:**** App built in `Python` + `Streamlit` by [JASHVANTH S R ](https://www.linkedin.com/in/jashvanth-s-r-476646213)[HARUL GANESH S B ](https://www.linkedin.com/in/harul-ganesh/)[BALAJI S ](https://www.linkedin.com/in/balaji-s-csbs-dept-03790a202/)[GOWTHAM H](https://www.linkedin.com/in/gowtham-haribabu-9425861bb/)
